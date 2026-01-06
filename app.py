@@ -5,10 +5,13 @@ import io
 import json
 import re
 import os
+from dotenv import load_dotenv
 import base64
 import pandas as pd
 from PIL import Image
 from dspy.teleprompt import COPRO
+
+load_dotenv()
 
 # ==========================================
 # 1. Helper Functions (Image Processing)
@@ -205,7 +208,12 @@ st.title("🖼️ Visual Rubric Optimization (Strict Inference)")
 
 with st.sidebar:
     st.header("Settings")
-    openrouter_key = st.text_input("OpenRouter API Key", type="password")
+    
+    # Try to fetch the key from the .env file
+    env_key = os.getenv("OPENROUTER_API_KEY", "")
+    
+    # Pre-fill the input box with the env key if it exists
+    openrouter_key = st.text_input("OpenRouter API Key", value=env_key, type="password")
 
 if 'image_pairs' not in st.session_state: st.session_state.image_pairs = []
 if 'annotations' not in st.session_state: st.session_state.annotations = []
