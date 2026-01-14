@@ -2,13 +2,14 @@ import streamlit as st
 import dspy
 import io
 import json
-import re
 import os
-from dotenv import load_dotenv
 import base64
 import pandas as pd
 from PIL import Image
-from dspy.teleprompt import COPRO
+from dotenv import load_dotenv
+
+# IMPORTS FOR MIPROv2
+from dspy.teleprompt import MIPROv2
 
 load_dotenv()
 
@@ -19,7 +20,6 @@ load_dotenv()
 def load_local_data(n_limit):
     """
     Reads preference.json and loads images from ./images folder.
-    Returns formatted pairs and annotations automatically.
     """
     json_path = "./preference.json"
     images_dir = "./images"
@@ -64,6 +64,7 @@ def load_local_data(n_limit):
             with open(path_a, 'rb') as f: img_a_bytes = f.read()
             with open(path_b, 'rb') as f: img_b_bytes = f.read()
             
+            # Verify they are valid images
             Image.open(io.BytesIO(img_a_bytes)).verify()
             Image.open(io.BytesIO(img_b_bytes)).verify()
 
@@ -75,6 +76,7 @@ def load_local_data(n_limit):
                 'filename_b': file_b
             })
 
+            # Clean up the choice string
             winner = "A"
             if ">>" in raw_choice:
                 winner = raw_choice.split(">>")[0].strip().upper()
@@ -120,17 +122,27 @@ def create_dspy_image_object(img_bytes):
     return dspy.Image(data_uri)
 
 # ==========================================
-# 2. DSPy Logic
+# 2. DSPy Logic (MIPROv2 Optimization)
 # ==========================================
 
-# --- 2.1 The Inference Signature (Base) ---
+# --- 2.1 The UPDATED Inference Signature ---
 class VisualPreference(dspy.Signature):
     """
-    This is a placeholder signature. 
-    The actual instructions will be injected dynamically based on the User's Taste Profile.
+    Decide which design better matches the user's taste.
+    Return a structured rubric explaining the decision.
     """
     image_a: dspy.Image = dspy.InputField(desc="The first mobile UI design variant.")
     image_b: dspy.Image = dspy.InputField(desc="The second mobile UI design variant.")
+    
+    # ⬇️ NEW: Explicitly asking for 10 rules
+    rubrics: str = dspy.OutputField(
+        desc=(
+            "A list of EXACTLY 10 concise visual preference rules "
+            "that explain why the winner was chosen. "
+            "Each rule should be one sentence, numbered 1–10."
+        )
+    )
+    
     winner: str = dspy.OutputField(desc="The design that matches the user's preference. Must be exactly 'A' or 'B'.")
 
 # --- 2.2 The Module ---
@@ -144,82 +156,30 @@ class PreferenceModule(dspy.Module):
 
 # --- 2.3 The Metric ---
 def choice_match_metric(example, prediction, trace=None):
-    pred_text = prediction.winner.upper()
-    match = re.search(r'\b(A|B)\b', pred_text)
-    if match:
-        found = match.group(1)
-        return found == example.winner.strip().upper()
-    return False
+    # We only care if the Winner matches. 
+    # The rubrics are the *explanation*, not the score target.
+    pred_text = prediction.winner.strip().upper()
+    
+    if "A" in pred_text and "B" not in pred_text: cleaned_pred = "A"
+    elif "B" in pred_text and "A" not in pred_text: cleaned_pred = "B"
+    else: cleaned_pred = pred_text[0] if pred_text else ""
+        
+    return cleaned_pred == example.winner.strip().upper()
 
-# --- 2.4 The "Taste Decoder" (Strict 7 Items + Likert 7) ---
-class RubricWriter(dspy.Signature):
-    """
-    You are a decoder of personal preference on mobile UI design. Your job is to reverse-engineer the user's *idiosyncratic* aesthetic preferences of the mobile UI design.
+# --- 2.4 The MIPROv2 Optimizer Function ---
+def run_mipro_optimization(api_key, annotations, image_pairs_lookup):
     
-    IMPORTANT: 
-    - The user's choice might NOT follow standard mobile UI best practices.
-    - Do NOT write generic rules like "Good readability" or "Clean layout".
-    - Instead, identify the specific "Vibe" or "Trait" that the winner has and the loser lacks.
-    
-    FORMATTING RULES:
-    - Extract EXACTLY 10 distinct 'Preference Criteria'.
-    - For each criterion, assign an **Importance Weight (1-7)** (1=Slight Preference, 7=Non-negotiable Requirement).
-    - Format: "1. [Specific Mobile UI Design Preference Trait] (Weight: [1-7]): [Description of the preference]"
-    - Do NOT mention "Image A" or "Image B". Make them universal rules of this user's preference.
-    - When writing rubrics, focus on mobile UI elements and color.
-    """
-    image_a: dspy.Image = dspy.InputField(desc="Design A")
-    image_b: dspy.Image = dspy.InputField(desc="Design B")
-    winner: str = dspy.InputField(desc="The user's choice (A or B)")
-    
-    analysis: str = dspy.OutputField(desc="Analysis of the specific stylistic difference.")
-    clean_rubric: str = dspy.OutputField(desc="The 10-item Design Preference Profile with Weights (1-7).")
-
-def generate_readable_rubric(trainset, original_program):
-    ex = trainset[0]
-    writer = dspy.Predict(RubricWriter)
-    pred = writer(
-        image_a=ex.image_a, 
-        image_b=ex.image_b, 
-        winner=f"Image {ex.winner}"
-    )
-    
-    raw_rubric = pred.clean_rubric
-    
-    formatted_instruction = f"""
-    You are simulating a specific user's mobile UI design preference and returning the output that user would prefer. Use their 'Preference Profile' below.
-
-    ### USER PREFERENCE PROFILE (WEIGHTED):
-    {raw_rubric}
-
-    ### SCORING PROTOCOL:
-    Step 1: For every item in the profile, rate A and B from 1 to 7 based on how much they satisfy this specific rubric.
-    Step 2: Multiply the rating by the (Weight).
-    Step 3: Show the calculation: "Item X: A=(Score*Weight)=Total, B=(Score*Weight)=Total"
-    Step 4: Sum all totals.
-    Step 5: Output the Winner (A or B) based on the highest sum.
-    """
-    
-    original_program.learned_rubric = formatted_instruction
-    return original_program
-
-# --- 2.5 Main Optimization Loop ---
-def run_optimization(api_key, annotations, image_pairs_lookup):
-    
-    # --- MODEL CONFIGURATION ---
-    model_id = "openrouter/google/gemini-2.5-flash"
-    
+    # 1. SETUP MODEL
     lm = dspy.LM(
-        model=model_id, 
+        model="openai/gpt-4.1-mini", 
         api_key=api_key, 
         api_base="https://openrouter.ai/api/v1", 
-        temperature=0.7,
+        temperature=1.0, 
         cache=False 
     )
-    
-    # FIX: Use Context Manager instead of global configure to avoid Threading Error
-    # dspy.configure(lm=lm) <-- REMOVED
+    dspy.configure(lm=lm)
 
+    # 2. PREPARE DATA
     trainset = []
     for note in annotations:
         pair = image_pairs_lookup.get(note['pair_id'])
@@ -232,38 +192,57 @@ def run_optimization(api_key, annotations, image_pairs_lookup):
 
     if not trainset: return None, "No data."
     
-    st.info("Phase 1: Analyzing preferences...")
+    # 3. CONFIGURE MIPROv2 (OPTIMIZED SETTINGS)
+    teleprompter = MIPROv2(
+        metric=choice_match_metric,
+        prompt_model=lm, 
+        task_model=lm,   
+        num_candidates=3,      # ⬇️ Reduced from 5 for speed
+        init_temperature=0.7,  # ⬇️ Reduced slightly for stability
+        verbose=True,
+        auto=None
+    )
     
-    # FIX: Wrap execution in context
-    with dspy.context(lm=lm):
-        try:
-            teleprompter = COPRO(
-                metric=choice_match_metric,
-                breadth=5, depth=2, init_temperature=1.0, prompt_model=lm
-            )
-            optimized_program = teleprompter.compile(
-                PreferenceModule(),
-                trainset=trainset,
-                eval_kwargs={"num_threads": 4, "display_progress": True}
-            )
-        except Exception as e:
-            print(f"Fallback due to error: {e}")
-            optimized_program = PreferenceModule()
+    st.info(f"🚀 Starting DSPy MIPROv2 Optimizer with {len(trainset)} examples...")
 
-        st.info("Phase 2: Decoding User Taste Profile (Likert 1-7)...")
-        # generate_readable_rubric calls dspy.Predict, which needs the context
-        optimized_program = generate_readable_rubric(trainset, optimized_program)
+    try:
+        # 4. COMPILE (The Optimization Loop)
+        optimized_program = teleprompter.compile(
+            PreferenceModule(),
+            trainset=trainset,
+            num_trials=5,             # ⬇️ Crucial: Reduced from 15 to 5
+            max_bootstrapped_demos=0, # ⬇️ Crucial: Disable synthetic demo generation
+            max_labeled_demos=1,      # Keep 1 real example
+            minibatch_size=3,         # ⬇️ Small batch for speed
+            requires_permission_to_run=False
+        )
         
-    st.success("✅ Taste Profile Decoded!")
+        # 5. EXTRACT INSIGHTS (BUG FIX APPLIED HERE)
+        # We access the signature of the 'predict' module within the compiled program
 
-    return optimized_program, trainset
+        # 5. EXTRACT INSIGHTS (VERSION-COMPATIBLE FIX)
+        st.success("✅ Optimization Complete! Taste Profile Found.")
+
+        # ChainOfThought → Predict → Signature
+        predict_module = optimized_program.predict.predict
+        sig = predict_module.signature
+
+        optimized_program.learned_rubric = sig.instructions
+
+        return optimized_program, trainset
+
+    except Exception as e:
+        import traceback
+        st.error(f"MIPROv2 Optimization failed: {e}")
+        st.code(traceback.format_exc())
+        return None, str(e)
 
 # ==========================================
 # 3. Streamlit Application
 # ==========================================
 
 st.set_page_config(page_title="Visual Rubric Optimizer", layout="wide")
-st.title("🖼️ Visual Rubric: Personal Taste Decoder")
+st.title("🖼️ Visual Rubric: MIPROv2 Optimizer")
 
 if 'image_pairs' not in st.session_state: st.session_state.image_pairs = []
 if 'annotations' not in st.session_state: st.session_state.annotations = []
@@ -295,7 +274,7 @@ with st.sidebar:
                 st.session_state.data_loaded = False
                 st.error("Failed to load data.")
 
-tab1, tab2, tab3 = st.tabs(["1. Data Preview", "2. Learn Taste Profile", "3. Run Scoring Inference"])
+tab1, tab2, tab3 = st.tabs(["1. Data Preview", "2. Learn Taste Profile (MIPROv2)", "3. Verify Accuracy & Rubrics"])
 
 with tab1:
     st.header("Data Preview")
@@ -309,97 +288,93 @@ with tab1:
                     with col2: display_limited_image(pair['b'], f"B: {pair.get('filename_b','')}", 30)
 
 with tab2:
-    st.header("Learn Taste Profile")
-    if st.button("Generate Profile"):
+    st.header("Learn Taste Profile (MIPROv2)")
+    st.markdown("""
+    **Optimization Settings:**
+    * `num_candidates`: 3 (Variations of instruction to propose)
+    * `num_trials`: 5 (Iterations to refine)
+    * `max_bootstrapped_demos`: 0 (Pure Few-Shot optimization)
+    """)
+    
+    if st.button("Run MIPRO Optimization"):
         if not openrouter_key or not st.session_state.data_loaded:
             st.error("Missing Key or Data.")
         else:
             img_lookup = {p['id']: p for p in st.session_state.image_pairs}
-            with st.spinner("Decoding aesthetic biases..."):
-                prog, _ = run_optimization(openrouter_key, st.session_state.annotations, img_lookup)
+            
+            with st.spinner("Running MIPROv2 (Lite Mode)..."):
+                prog, _ = run_mipro_optimization(openrouter_key, st.session_state.annotations, img_lookup)
                 st.session_state.optimized_prog = prog
                 
                 if prog:
                     st.divider()
-                    st.subheader("📝 Learned Taste Profile")
-                    rubric_text = getattr(prog, 'learned_rubric', "")
-                    display_text = rubric_text.split("### SCORING PROTOCOL")[0] if "###" in rubric_text else rubric_text
-                    st.info(display_text)
+                    st.subheader("🧬 The Optimized Instruction (System Prompt)")
+                    st.success("This instruction prompts the model to generate the 10 rubrics below:")
+                    rubric_text = getattr(prog, 'learned_rubric', "No rubric found")
+                    st.code(rubric_text, language="text")
 
 with tab3:
-    st.header("Weighted Inference Scoring")
-    if st.session_state.optimized_prog and st.button("Calculate Scores"):
+    st.header("Verify Accuracy & View 10 Rubrics")
+    if st.session_state.optimized_prog and st.button("Run Inference"):
         results = []
         img_lookup = {p['id']: p for p in st.session_state.image_pairs}
         prog = st.session_state.optimized_prog
-        rubric_to_use = getattr(prog, 'learned_rubric', None)
         
-        if not rubric_to_use:
-            st.error("No rubric found. Please run Tab 2 first.")
-        else:
-            # FIX: Re-initialize LM locally for this thread
-            lm_inference = dspy.LM(
-                model="openrouter/google/gemini-2.5-flash", 
-                api_key=openrouter_key, 
-                api_base="https://openrouter.ai/api/v1", 
-                temperature=0.7,
-                cache=False 
-            )
+        # Configure LM for inference
+        lm_inference = dspy.LM(
+            model="openai/gpt-4.1-mini", 
+            api_key=openrouter_key, 
+            api_base="https://openrouter.ai/api/v1", 
+            temperature=0.0,
+            cache=False 
+        )
+        dspy.configure(lm=lm_inference)
 
-            # Dynamic Class to bypass Cache and fix AttributeError
-            class DynamicPreference(dspy.Signature):
-                __doc__ = rubric_to_use
-                image_a: dspy.Image = dspy.InputField(desc="The first UI design variant.")
-                image_b: dspy.Image = dspy.InputField(desc="The second UI design variant.")
-                winner: str = dspy.OutputField(desc="The design that matches the user's taste. Must be exactly 'A' or 'B'.")
-
-            fresh_scorer = dspy.ChainOfThought(DynamicPreference)
-
-            correct_count = 0
-            total_count = 0
-            bar = st.progress(0)
+        correct_count = 0
+        total_count = 0
+        bar = st.progress(0)
+        
+        for i, note in enumerate(st.session_state.annotations):
+            pair = img_lookup.get(note['pair_id'])
             
-            # FIX: Wrap loop in context
-            with dspy.context(lm=lm_inference):
-                for i, note in enumerate(st.session_state.annotations):
-                    pair = img_lookup.get(note['pair_id'])
+            try:
+                # Use the optimized program
+                pred = prog(
+                    image_a=create_dspy_image_object(pair['a']), 
+                    image_b=create_dspy_image_object(pair['b'])
+                )
+                
+                raw_winner = pred.winner.strip().upper()
+                if "A" in raw_winner and "B" not in raw_winner: ai_choice = "A"
+                elif "B" in raw_winner and "A" not in raw_winner: ai_choice = "B"
+                else: ai_choice = raw_winner[0] if raw_winner else "?"
+                
+                match = "✅" if ai_choice == note['preference'] else "❌"
+                if match == "✅": correct_count += 1
+                total_count += 1
                     
-                    try:
-                        pred = fresh_scorer(
-                            image_a=create_dspy_image_object(pair['a']), 
-                            image_b=create_dspy_image_object(pair['b'])
-                        )
-                        
-                        raw_winner = pred.winner.strip().upper()
-                        # Simple cleanup
-                        if "A" in raw_winner and "B" not in raw_winner: ai_choice = "A"
-                        elif "B" in raw_winner and "A" not in raw_winner: ai_choice = "B"
-                        else: ai_choice = raw_winner[0] if raw_winner else "?"
-                        
-                        # Logic for Hit Rate
-                        if ai_choice == note['preference']:
-                            match = "✅"
-                            correct_count += 1
-                        else:
-                            match = "❌"
-                        total_count += 1
-                            
-                        reasoning_snippet = pred.reasoning[:600] + "..." if hasattr(pred, 'reasoning') else "No reasoning"
-                        
-                        results.append({
-                            "Human": note['preference'], 
-                            "AI": ai_choice, 
-                            "Match": match, 
-                            "Detailed Calculation": reasoning_snippet
-                        })
-                    except Exception as e:
-                        st.error(f"Error on item {i}: {e}")
-                    
-                    bar.progress((i+1)/len(st.session_state.annotations))
+                # Store the Generated Rubrics
+                results.append({
+                    "Pair ID": note['pair_id'],
+                    "Human": note['preference'], 
+                    "AI": ai_choice, 
+                    "Match": match, 
+                    "Generated Rubrics (10 Rules)": pred.rubrics
+                })
+            except Exception as e:
+                st.error(f"Error on item {i}: {e}")
             
-            # Display Hit Rate
-            if total_count > 0:
-                accuracy = (correct_count / total_count) * 100
-                st.metric("Inference Accuracy (Hit Rate)", f"{accuracy:.1f}%")
-            
-            st.dataframe(pd.DataFrame(results))
+            bar.progress((i+1)/len(st.session_state.annotations))
+        
+        if total_count > 0:
+            accuracy = (correct_count / total_count) * 100
+            st.metric("Inference Accuracy", f"{accuracy:.1f}%")
+        
+        # Display DataFrame with Rubrics column
+        st.dataframe(pd.DataFrame(results))
+        
+        # Detail view for first item
+        if results:
+            st.divider()
+            st.subheader("Example Output (Rubrics for first item)")
+            st.markdown(results[0]["Generated Rubrics (10 Rules)"])
