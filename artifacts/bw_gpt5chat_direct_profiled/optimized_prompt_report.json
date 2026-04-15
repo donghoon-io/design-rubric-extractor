@@ -1,0 +1,87 @@
+{
+  "provider": "azure",
+  "model": "gpt-5-chat",
+  "mode": "direct",
+  "preferences_path": "/Users/donghoonshin/Documents/GitHub/design-rubric-extractor-updated/preference_bw.json",
+  "images_dir": "/Users/donghoonshin/Documents/GitHub/design-rubric-extractor-updated/images_bw",
+  "task_description": "You are predicting which UI design a human evaluator would prefer between design A and design B. Both images represent the same product screen. Base the decision on likely human preferences around visual hierarchy, spacing, readability, balance, usefulness of the layout, emphasis of important actions, and overall polish. Return exactly one label: A or B.",
+  "preference_profile": "Learn this annotator's preference style from the labeled examples:\n- They reward strong contrast, legibility, and obvious hierarchy.\n- They prefer layouts with visible controls, balanced spacing, and coherent task flow.\n- They penalize clutter, distracting decoration, awkward alignment, and cramped lower sections.\n- When both designs are flawed, they favor the option that feels easier to fix without a full redesign.\n- In 10 labeled pairs where dark and light variants opposed each other, they more often preferred the darker version.\n- Treat darker themes as a positive signal when they improve contrast, reduce glare, and make the interface feel calmer or more cohesive.\n- Do not prefer dark mode blindly; only favor it when readability, hierarchy, and usability also improve.",
+  "selected_profile_name": "dark_mode_bias",
+  "profile_search_results": [
+    {
+      "name": "generic_ui",
+      "accuracy": 0.25,
+      "profile": "Learn this annotator's niche preference style from prior rationales:\n- They heavily reward strong contrast, legibility, and obvious visual hierarchy.\n- They dislike screens that feel crammed, especially when content or controls get pushed toward the bottom.\n- They prefer layouts where primary controls remain visible and usable rather than being overshadowed by decorative imagery.\n- They often choose the option that feels more coherent and easier to fix when both designs are flawed.\n- They like visual interest, gradients, or large imagery only when it supports the task and does not reduce clarity.\n- They notice alignment, even spacing, and balanced distribution of navigation, buttons, and content.\n- They value visible cues for interaction, such as scroll affordances on long text screens.\n- They often prefer practical usability and information flow over flashy but distracting presentation."
+    },
+    {
+      "name": "inferred_general",
+      "accuracy": 0.25,
+      "profile": "Learn this annotator's preference style from the labeled examples:\n- They reward strong contrast, legibility, and obvious hierarchy.\n- They prefer layouts with visible controls, balanced spacing, and coherent task flow.\n- They penalize clutter, distracting decoration, awkward alignment, and cramped lower sections.\n- When both designs are flawed, they favor the option that feels easier to fix without a full redesign."
+    },
+    {
+      "name": "dark_mode_bias",
+      "accuracy": 0.375,
+      "profile": "Learn this annotator's preference style from the labeled examples:\n- They reward strong contrast, legibility, and obvious hierarchy.\n- They prefer layouts with visible controls, balanced spacing, and coherent task flow.\n- They penalize clutter, distracting decoration, awkward alignment, and cramped lower sections.\n- When both designs are flawed, they favor the option that feels easier to fix without a full redesign.\n- In 10 labeled pairs where dark and light variants opposed each other, they more often preferred the darker version.\n- Treat darker themes as a positive signal when they improve contrast, reduce glare, and make the interface feel calmer or more cohesive.\n- Do not prefer dark mode blindly; only favor it when readability, hierarchy, and usability also improve."
+    },
+    {
+      "name": "task_first",
+      "accuracy": 0.25,
+      "profile": "Learn this annotator's preference style from the labeled examples:\n- They reward strong contrast, legibility, and obvious hierarchy.\n- They prefer layouts with visible controls, balanced spacing, and coherent task flow.\n- They penalize clutter, distracting decoration, awkward alignment, and cramped lower sections.\n- When both designs are flawed, they favor the option that feels easier to fix without a full redesign.\n- Strongly prioritize task completion cues such as readable fields, obvious buttons, and clear information flow over surface styling.\n- If one design feels more like a usable screen and the other feels more decorative or mood-driven, prefer the usable screen."
+    }
+  ],
+  "split_sizes": {
+    "train": 2,
+    "validation": 8,
+    "test": 0
+  },
+  "evaluation_split": "validation",
+  "warning": "No held-out test set was used; reported metrics are in-sample on the validation set.",
+  "train_examples": [
+    {
+      "cid": "2::2_dark.png>>2_light.png::T000107",
+      "uid": "T000107",
+      "screen_id": 2,
+      "left_file": "2_dark.png",
+      "right_file": "2_light.png",
+      "predicted_choice": "A",
+      "rationale": "1, A looks more modern and sleek \n2, A gives off a premium vibe compared to B \n3, The dark background in A is less distracting"
+    },
+    {
+      "cid": "1::1_light.png>>1_dark.png::T000106",
+      "uid": "T000106",
+      "screen_id": 1,
+      "left_file": "1_light.png",
+      "right_file": "1_dark.png",
+      "predicted_choice": "B",
+      "rationale": "1, B is much easier on the eyes \n2, The contrast in B makes the text pop more \n3, A feels too harsh and bright"
+    }
+  ],
+  "baseline_metrics": {
+    "accuracy": 0.5
+  },
+  "optimized_metrics": {
+    "accuracy": 0.25
+  },
+  "baseline_prompt": "Predict which UI design a human evaluator likely preferred.\n\nJudge the pair the way a design-aware human rater would, not by personal taste alone.\nPrefer the option with clearer hierarchy, better spacing, stronger readability, more balanced\nemphasis between content and controls, and a layout that feels more usable and polished.\nPenalize distracting decorative elements, crowded bottoms, weak contrast, awkward alignment,\nand compositions that hide or compress the main action area. When both options are flawed,\nprefer the one that appears more coherent and easier to fix without redesigning the whole screen.\nMatch the annotator's niche tendencies: strong preference for contrast and legibility,\ndislike of crammed bottoms, preference for visible controls over oversized decoration,\nand willingness to choose the more salvageable design when both are imperfect.",
+  "optimized_prompt": "You are an expert UI/UX design evaluator trained to emulate the decision-making patterns of professional human raters. You will be given two design options. Your task is to identify which one a design-savvy human evaluator would most likely prefer.\n\nWhen deciding, focus on objective design principles rather than personal aesthetic taste. Evaluate:\n- **Visual hierarchy:** Is the information structured clearly and logically?\n- **Spacing and alignment:** Is the design breathable, consistent, and free from visual clutter or awkward alignment?\n- **Readability and contrast:** Are text and interactive elements legible and easy to spot?\n- **Balance between content and controls:** Does the layout give appropriate emphasis to both content and essential controls?\n- **Polish and usability feel:** Does the interface look professionally composed and user-friendly?\n\nPenalize:\n- Overly decorative or distracting elements\n- Crowded regions (especially near the bottom)\n- Weak contrast or hard-to-read text\n- Haphazard alignment or compressed primary content areas\n\nIf both designs have issues, select the one that still feels coherent, maintains legibility, and would require fewer structural changes to fix. Your selection should reflect a human rater\u2019s pragmatic and usability-oriented judgment, not an abstract or purely algorithmic rule.",
+  "optimized_demos": [
+    {
+      "cid": "2::2_dark.png>>2_light.png::T000107",
+      "uid": "T000107",
+      "screen_id": 2,
+      "left_file": "2_dark.png",
+      "right_file": "2_light.png",
+      "predicted_choice": "A",
+      "rationale": "1, A looks more modern and sleek \n2, A gives off a premium vibe compared to B \n3, The dark background in A is less distracting"
+    },
+    {
+      "cid": "1::1_light.png>>1_dark.png::T000106",
+      "uid": "T000106",
+      "screen_id": 1,
+      "left_file": "1_light.png",
+      "right_file": "1_dark.png",
+      "predicted_choice": "B",
+      "rationale": "1, B is much easier on the eyes \n2, The contrast in B makes the text pop more \n3, A feels too harsh and bright"
+    }
+  ]
+}

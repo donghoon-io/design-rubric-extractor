@@ -1,0 +1,51 @@
+{
+  "provider": "azure",
+  "model": "gpt-4.1",
+  "task_description": "You are predicting which UI design a human evaluator would prefer between design A and design B. Both images represent the same product screen. Base the decision on likely human preferences around visual hierarchy, spacing, readability, balance, usefulness of the layout, emphasis of important actions, and overall polish. Return exactly one label: A or B.",
+  "preference_profile": "Learn this annotator's niche preference style from prior rationales:\n- They heavily reward strong contrast, legibility, and obvious visual hierarchy.\n- They dislike screens that feel crammed, especially when content or controls get pushed toward the bottom.\n- They prefer layouts where primary controls remain visible and usable rather than being overshadowed by decorative imagery.\n- They often choose the option that feels more coherent and easier to fix when both designs are flawed.\n- They like visual interest, gradients, or large imagery only when it supports the task and does not reduce clarity.\n- They notice alignment, even spacing, and balanced distribution of navigation, buttons, and content.\n- They value visible cues for interaction, such as scroll affordances on long text screens.\n- They often prefer practical usability and information flow over flashy but distracting presentation.",
+  "split_sizes": {
+    "train": 2,
+    "validation": 30,
+    "test": 50
+  },
+  "train_examples": [
+    {
+      "cid": "41454::gemini_comp_s2w_41454_v1.png>>gemini_comp_s2w_41454_v2.png::T000000",
+      "uid": "T000000",
+      "screen_id": 41454,
+      "predicted_choice": "A",
+      "rationale": "In this comparison, I strongly preferred A because the layout affords good balance of space for the album artwork, the audio controls, and artist and track details. That balance is essential for a music player app, as the visual appeal of the space for the artwork and track information is important for users who want to share what they're listening to on social media, but the size and placement of the controls are necessary to actually use the player. There are minor tweaks needed for A's icons, but B places too much importance on the album artwork and there is no space for the controls, making the design look squished at the bottom and unusable."
+    },
+    {
+      "cid": "9249::gpt_comp_s2w_9249_v2.png>>gpt_comp_s2w_9249_v4.png::T000004",
+      "uid": "T000004",
+      "screen_id": 9249,
+      "predicted_choice": "B",
+      "rationale": "For the scanning app, I strongly preferred B. I liked how the logo and the tagline were centered on the screen, drawing the eye down to the form fields. There wasn't a strong difference between the form fields for both designs, but I felt that the placement of the Forgot password text flowed better than the choice used for A. For A, I found the placement of the image at the top right distracts the eye from the visual hierarchy established by the other design elements at the top, and it seems out of place compared to the form fields."
+    }
+  ],
+  "baseline_metrics": {
+    "accuracy": 0.4
+  },
+  "optimized_metrics": {
+    "accuracy": 0.46
+  },
+  "baseline_prompt": "Predict which UI design a human evaluator likely preferred.\n\nJudge the pair the way a design-aware human rater would, not by personal taste alone.\nPrefer the option with clearer hierarchy, better spacing, stronger readability, more balanced\nemphasis between content and controls, and a layout that feels more usable and polished.\nPenalize distracting decorative elements, crowded bottoms, weak contrast, awkward alignment,\nand compositions that hide or compress the main action area. When both options are flawed,\nprefer the one that appears more coherent and easier to fix without redesigning the whole screen.\nMatch the annotator's niche tendencies: strong preference for contrast and legibility,\ndislike of crammed bottoms, preference for visible controls over oversized decoration,\nand willingness to choose the more salvageable design when both are imperfect.",
+  "optimized_prompt": "Given two UI design options, determine which option a design-savvy human evaluator would prefer by applying the following evaluative principles:\n- Assess clarity of visual hierarchy, spacing, readability, balance between essential content and controls, and overall usability and visual polish.\n- Prefer designs with strong contrast and legibility, ample spacing (especially at the bottom), logical alignment, and visibility of key controls.  \n- Penalize overly decorative elements that distract, crowded/restricted layouts (especially near the bottom), low or inconsistent contrast, incompatible emphasis, hiding/clustering of controls, or unnecessary compression of the main action area.\n- If both designs have problems, select the one that is more coherent and simpler to improve without a major redesign.\n- Match the evaluator\u2019s bias for contrast and legibility, appreciation for visible/accessible controls, and a tendency to pick the more easily improved option.\n\nIn your answer, specify which design is preferred and give a rationale referencing the criteria above.",
+  "optimized_demos": [
+    {
+      "cid": "41454::gemini_comp_s2w_41454_v1.png>>gemini_comp_s2w_41454_v2.png::T000000",
+      "uid": "T000000",
+      "screen_id": 41454,
+      "predicted_choice": "A",
+      "rationale": "In this comparison, I strongly preferred A because the layout affords good balance of space for the album artwork, the audio controls, and artist and track details. That balance is essential for a music player app, as the visual appeal of the space for the artwork and track information is important for users who want to share what they're listening to on social media, but the size and placement of the controls are necessary to actually use the player. There are minor tweaks needed for A's icons, but B places too much importance on the album artwork and there is no space for the controls, making the design look squished at the bottom and unusable."
+    },
+    {
+      "cid": "9249::gpt_comp_s2w_9249_v2.png>>gpt_comp_s2w_9249_v4.png::T000004",
+      "uid": "T000004",
+      "screen_id": 9249,
+      "predicted_choice": "B",
+      "rationale": "For the scanning app, I strongly preferred B. I liked how the logo and the tagline were centered on the screen, drawing the eye down to the form fields. There wasn't a strong difference between the form fields for both designs, but I felt that the placement of the Forgot password text flowed better than the choice used for A. For A, I found the placement of the image at the top right distracts the eye from the visual hierarchy established by the other design elements at the top, and it seems out of place compared to the form fields."
+    }
+  ]
+}

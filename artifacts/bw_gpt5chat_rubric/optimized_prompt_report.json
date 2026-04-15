@@ -1,0 +1,64 @@
+{
+  "provider": "azure",
+  "model": "gpt-5-chat",
+  "mode": "rubric",
+  "preferences_path": "/Users/donghoonshin/Documents/GitHub/design-rubric-extractor-updated/preference_bw.json",
+  "images_dir": "/Users/donghoonshin/Documents/GitHub/design-rubric-extractor-updated/images_bw",
+  "task_description": "You are predicting which UI design a human evaluator would prefer between design A and design B. Both images represent the same product screen. Base the decision on likely human preferences around visual hierarchy, spacing, readability, balance, usefulness of the layout, emphasis of important actions, and overall polish. Return exactly one label: A or B.",
+  "preference_profile": "Learn this annotator's niche preference style from prior rationales:\n- They heavily reward strong contrast, legibility, and obvious visual hierarchy.\n- They dislike screens that feel crammed, especially when content or controls get pushed toward the bottom.\n- They prefer layouts where primary controls remain visible and usable rather than being overshadowed by decorative imagery.\n- They often choose the option that feels more coherent and easier to fix when both designs are flawed.\n- They like visual interest, gradients, or large imagery only when it supports the task and does not reduce clarity.\n- They notice alignment, even spacing, and balanced distribution of navigation, buttons, and content.\n- They value visible cues for interaction, such as scroll affordances on long text screens.\n- They often prefer practical usability and information flow over flashy but distracting presentation.",
+  "split_sizes": {
+    "train": 2,
+    "validation": 8,
+    "test": 0
+  },
+  "evaluation_split": "validation",
+  "warning": "No held-out test set was used; reported metrics are in-sample on the validation set.",
+  "train_examples": [
+    {
+      "cid": "2::2_dark.png>>2_light.png::T000107",
+      "uid": "T000107",
+      "screen_id": 2,
+      "left_file": "2_dark.png",
+      "right_file": "2_light.png",
+      "predicted_choice": "A",
+      "rationale": "1, A looks more modern and sleek \n2, A gives off a premium vibe compared to B \n3, The dark background in A is less distracting"
+    },
+    {
+      "cid": "1::1_light.png>>1_dark.png::T000106",
+      "uid": "T000106",
+      "screen_id": 1,
+      "left_file": "1_light.png",
+      "right_file": "1_dark.png",
+      "predicted_choice": "B",
+      "rationale": "1, B is much easier on the eyes \n2, The contrast in B makes the text pop more \n3, A feels too harsh and bright"
+    }
+  ],
+  "baseline_metrics": {
+    "accuracy": 0.25
+  },
+  "optimized_metrics": {
+    "accuracy": 0.25
+  },
+  "baseline_prompt": "Predict which UI design a human evaluator likely preferred via rubric dimensions.\n\nJudge the pair the way a design-aware human rater would, not by personal taste alone.\nPrefer the option with clearer hierarchy, better spacing, stronger readability, more balanced\nemphasis between content and controls, and a layout that feels more usable and polished.\nPenalize distracting decorative elements, crowded bottoms, weak contrast, awkward alignment,\nand compositions that hide or compress the main action area. When both options are flawed,\nprefer the one that appears more coherent and easier to fix without redesigning the whole screen.\nMatch the annotator's niche tendencies: strong preference for contrast and legibility,\ndislike of crammed bottoms, preference for visible controls over oversized decoration,\nand willingness to choose the more salvageable design when both are imperfect.",
+  "optimized_prompt": "Imagine you are a seasoned UX designer evaluating two interface mockups through the eyes of a meticulous human rater. Your job is to predict which design the evaluator would choose based on the detailed rubric. Assess both designs holistically, considering how effectively they communicate structure, usability, and visual clarity. Favor the design that demonstrates a clear information hierarchy, balanced whitespace, readable typography, and well-proportioned emphasis between interactive elements and content. Deduct points for visual clutter, poorly aligned sections, inadequate contrast, or confusing placement of the primary action. If both designs are imperfect, select the one that feels more coherent and easily refinable without a full redesign. Reflect the evaluator\u2019s tendencies: they value contrast and legibility, dislike dense lower sections, prefer clearly visible functional controls to ornamental visuals, and lean toward practical polish over aesthetic excess.",
+  "optimized_demos": [
+    {
+      "cid": "2::2_dark.png>>2_light.png::T000107",
+      "uid": "T000107",
+      "screen_id": 2,
+      "left_file": "2_dark.png",
+      "right_file": "2_light.png",
+      "predicted_choice": "A",
+      "rationale": "1, A looks more modern and sleek \n2, A gives off a premium vibe compared to B \n3, The dark background in A is less distracting"
+    },
+    {
+      "cid": "1::1_light.png>>1_dark.png::T000106",
+      "uid": "T000106",
+      "screen_id": 1,
+      "left_file": "1_light.png",
+      "right_file": "1_dark.png",
+      "predicted_choice": "B",
+      "rationale": "1, B is much easier on the eyes \n2, The contrast in B makes the text pop more \n3, A feels too harsh and bright"
+    }
+  ]
+}
