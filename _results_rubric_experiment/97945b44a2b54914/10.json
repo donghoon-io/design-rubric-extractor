@@ -1,0 +1,2254 @@
+{
+  "annotator_id": "97945b44a2b54914",
+  "rubric_count": "10",
+  "actual_criteria_count": 10,
+  "model": "gpt-5.4-mini",
+  "split": {
+    "train_rows": 20,
+    "test_rows": 20,
+    "train_start_row": 0,
+    "train_end_row": 19,
+    "test_start_row": 20,
+    "test_end_row": 39
+  },
+  "niche_preference_profile": "This user prefers clean, spacious, easy-to-scan mobile interfaces with strong hierarchy, concise copy, and clear sectioning. They generally like light or airy layouts, but will sometimes prefer darker, more urgent treatment in security-critical flows. They also like screens that feel complete and actionable, with visible controls and clear next steps, while avoiding clutter, excessive decoration, and overly dense stacked content.",
+  "criteria": [
+    {
+      "criterion": "clear_section_structure",
+      "description": "Prefers interfaces broken into clearly separated sections or cards, with distinct grouping rather than blended or nested panels.",
+      "weight": 18.0
+    },
+    {
+      "criterion": "spacious_low_clutter_layout",
+      "description": "Prefers open layouts with generous whitespace and fewer competing elements visible at once.",
+      "weight": 17.0
+    },
+    {
+      "criterion": "concise_scannable_copy",
+      "description": "Prefers short, direct, easy-to-scan copy over verbose explanations or marketing-like text.",
+      "weight": 14.0
+    },
+    {
+      "criterion": "strong_visual_hierarchy",
+      "description": "Prefers a clear primary focus with obvious hierarchy in titles, cards, and actions, rather than multiple equally weighted elements.",
+      "weight": 13.0
+    },
+    {
+      "criterion": "complete_actionable_state",
+      "description": "Prefers screens that feel populated, finished, and immediately actionable, with visible controls and useful information rather than empty or placeholder-like states.",
+      "weight": 12.0
+    },
+    {
+      "criterion": "simple_control_presentation",
+      "description": "Prefers straightforward control patterns such as compact lists, grouped toggles, and clear row actions over bulky card-based or overly segmented controls.",
+      "weight": 11.0
+    },
+    {
+      "criterion": "light_airy_minimal_styling",
+      "description": "Prefers light, airy, minimal visual styling with gentle surfaces and restrained chrome instead of heavy borders, layered surfaces, or dark weight.",
+      "weight": 10.0
+    },
+    {
+      "criterion": "clear_progress_and_navigation_cues",
+      "description": "Prefers onboarding and flow screens that show enough progress and navigation context to orient the user, but without excessive chrome or dominance.",
+      "weight": 9.0
+    },
+    {
+      "criterion": "prominent_primary_action",
+      "description": "Prefers a clearly identifiable main action button or next step, with enough emphasis to make the intended action obvious.",
+      "weight": 8.0
+    },
+    {
+      "criterion": "contextual_information_visibility",
+      "description": "Prefers relevant context and key details to remain visible, such as page titles, card identifiers, or surrounding screen context, rather than overly obscured or isolated dialogs.",
+      "weight": 7.0
+    }
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.3,
+    "correct": 6,
+    "total_evaluated": 20
+  },
+  "predictions": [
+    {
+      "pair_id": "14289::gpt_comp_s2w_14289_v1.png||gpt_comp_s2w_14289_v2.png",
+      "cid": "14289::gpt_comp_s2w_14289_v1.png>>gpt_comp_s2w_14289_v2.png::T000024",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated content blocks",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier with less visible density",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses shorter, more direct copy",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 28.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly clearer primary emphasis",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 2,
+            "reason": "A feels more finished and immediately usable",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A presents controls more straightforwardly",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 4,
+            "reason": "A is lighter and less visually heavy",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A gives slightly clearer onboarding context",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's main button reads a bit clearer",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 2,
+            "reason": "A keeps key context more visible",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 14.0
+          }
+        ],
+        "avg_delta": 195.33333333333334,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "13585::gemini_comp_s2w_13585_v2.png||gemini_comp_s2w_13585_v3.png",
+      "cid": "13585::gemini_comp_s2w_13585_v2.png>>gemini_comp_s2w_13585_v3.png::T000021",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses clearer card separation.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels airier, less visually dense.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 17.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": -2,
+            "reason": "B labels sections more succinctly.",
+            "confidence": "medium",
+            "effective_delta": -2.0,
+            "applied_weight": 14.0,
+            "weighted_delta": -28.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A emphasizes the main action more.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A shows more explicit item actions.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A's row actions are clearer.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A strongly matches light airy styling.",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 0,
+            "reason": "Neither shows meaningful flow progress.",
+            "confidence": "high",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's add button stands out slightly more.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 2,
+            "reason": "A keeps context on lighter cards.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 14.0
+          }
+        ],
+        "avg_delta": 86.33333333333333,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "14289::gpt_comp_s2w_14289_v1.png||gpt_comp_s2w_14289_v4.png",
+      "cid": "14289::gpt_comp_s2w_14289_v1.png>>gpt_comp_s2w_14289_v4.png::T000026",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 1,
+            "reason": "A uses simpler separated sections",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 18.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 2,
+            "reason": "A feels airier, less crowded",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 34.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A copy is slightly shorter",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": -1,
+            "reason": "B has clearer title-action hierarchy",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": -13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": -2,
+            "reason": "B feels more finished and actionable",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": -24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A shows simpler control layout",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 1,
+            "reason": "A is lighter and less weighted",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 10.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -2,
+            "reason": "B provides better flow context",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -18.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -3,
+            "reason": "B's primary button is more prominent",
+            "confidence": "high",
+            "effective_delta": -3.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -24.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps surrounding context visible",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 6.0,
+        "votes_a": 2,
+        "votes_b": 1,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "14289::gpt_comp_s2w_14289_v1.png||gpt_comp_s2w_14289_v3.png",
+      "cid": "14289::gpt_comp_s2w_14289_v1.png>>gpt_comp_s2w_14289_v3.png::T000025",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated content blocks.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 4,
+            "reason": "A feels airier with much more whitespace.",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 68.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A is slightly more direct and readable.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A has clearer title-action hierarchy.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels more finished, though sparse.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A presents controls more straightforwardly.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A strongly matches light airy minimal styling.",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A gives slightly clearer onboarding context.",
+            "confidence": "low",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's main button is more visually obvious.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 2,
+            "reason": "A keeps surrounding context less buried.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 14.0
+          }
+        ],
+        "avg_delta": 199.0,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "13585::gemini_comp_s2w_13585_v3.png||gemini_comp_s2w_13585_v4.png",
+      "cid": "13585::gemini_comp_s2w_13585_v3.png>>gemini_comp_s2w_13585_v4.png::T000023",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated rows.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 4,
+            "reason": "A feels much less crowded.",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 68.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter labels.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 3,
+            "reason": "A emphasizes one clear action.",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 39.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 2,
+            "reason": "A shows a finished, usable list.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 4,
+            "reason": "A uses simpler row actions.",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 44.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": -4,
+            "reason": "B is lighter and airier.",
+            "confidence": "high",
+            "effective_delta": -4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": -40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 0,
+            "reason": "Neither shows progress context.",
+            "confidence": "medium",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 2,
+            "reason": "A's add button stands out more.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 16.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps list context visible.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 201.33333333333334,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "13585::gemini_comp_s2w_13585_v2.png||gemini_comp_s2w_13585_v4.png",
+      "cid": "13585::gemini_comp_s2w_13585_v2.png>>gemini_comp_s2w_13585_v4.png::T000022",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated cards",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 4,
+            "reason": "A feels much airier and lighter",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 68.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter labels",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A emphasizes primary action better",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "B shows more visible actions",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 3,
+            "reason": "A uses simpler row actions",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 33.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 4,
+            "reason": "A is lighter and less heavy",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 0,
+            "reason": "Both provide similar navigation context",
+            "confidence": "medium",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's add button stands out more",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps context cleaner and visible",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 214.33333333333334,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "13585::gemini_comp_s2w_13585_v1.png||gemini_comp_s2w_13585_v4.png",
+      "cid": "13585::gemini_comp_s2w_13585_v1.png>>gemini_comp_s2w_13585_v4.png::T000020",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": -4,
+            "reason": "B uses distinct cards and grouped actions",
+            "confidence": "high",
+            "effective_delta": -4.0,
+            "applied_weight": 18.0,
+            "weighted_delta": -72.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": -5,
+            "reason": "A is mostly empty; B is crowded",
+            "confidence": "high",
+            "effective_delta": -5.0,
+            "applied_weight": 17.0,
+            "weighted_delta": -85.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": -1,
+            "reason": "B has slightly more text overall",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": -14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": -5,
+            "reason": "B clearly emphasizes title, search, actions",
+            "confidence": "high",
+            "effective_delta": -5.0,
+            "applied_weight": 13.0,
+            "weighted_delta": -65.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": -5,
+            "reason": "B shows populated, usable blacklist entries",
+            "confidence": "high",
+            "effective_delta": -5.0,
+            "applied_weight": 12.0,
+            "weighted_delta": -60.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": -4,
+            "reason": "B presents direct row actions clearly",
+            "confidence": "high",
+            "effective_delta": -4.0,
+            "applied_weight": 11.0,
+            "weighted_delta": -44.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 2,
+            "reason": "A is lighter and more minimal",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 20.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -2,
+            "reason": "B provides more screen context and flow",
+            "confidence": "medium",
+            "effective_delta": -2.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -18.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -5,
+            "reason": "B has obvious Add Number button",
+            "confidence": "high",
+            "effective_delta": -5.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -40.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -5,
+            "reason": "B exposes names, numbers, and actions",
+            "confidence": "high",
+            "effective_delta": -5.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -35.0
+          }
+        ],
+        "avg_delta": -344.6666666666667,
+        "votes_a": 0,
+        "votes_b": 3,
+        "votes_tie": 0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "15033::gpt_comp_s2w_15033_v1.png||gpt_comp_s2w_15033_v2.png",
+      "cid": "15033::gpt_comp_s2w_15033_v1.png>>gpt_comp_s2w_15033_v2.png::T000030",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated blocks",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels slightly airier overall",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 17.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly less explanatory text",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A emphasizes alerts more clearly",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels more populated and ready",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses simpler, clearer controls",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 1,
+            "reason": "A is lighter and less button-heavy",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 10.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 0,
+            "reason": "Both provide similar flow context",
+            "confidence": "medium",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -2,
+            "reason": "B makes refresh more prominent",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -16.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A shows more surrounding context",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 71.33333333333333,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "14289::gpt_comp_s2w_14289_v3.png||gpt_comp_s2w_14289_v4.png",
+      "cid": "14289::gpt_comp_s2w_14289_v3.png>>gpt_comp_s2w_14289_v4.png::T000029",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses clearer stacked sections",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": -2,
+            "reason": "B feels airier and less crowded",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 17.0,
+            "weighted_delta": -34.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": -1,
+            "reason": "B is slightly more concise",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": -14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": -1,
+            "reason": "B has clearer primary emphasis",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": -13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels more filled and actionable",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses simpler direct controls",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": -4,
+            "reason": "B is much lighter and airier",
+            "confidence": "high",
+            "effective_delta": -4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": -40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -1,
+            "reason": "B provides better flow context",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -2,
+            "reason": "B's main button is more prominent",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -16.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -1,
+            "reason": "B keeps more surrounding context visible",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -7.0
+          }
+        ],
+        "avg_delta": -13.666666666666666,
+        "votes_a": 1,
+        "votes_b": 2,
+        "votes_tie": 0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "14289::gpt_comp_s2w_14289_v2.png||gpt_comp_s2w_14289_v3.png",
+      "cid": "14289::gpt_comp_s2w_14289_v2.png>>gpt_comp_s2w_14289_v3.png::T000027",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 3,
+            "reason": "A uses cleaner separated sections.",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 54.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 4,
+            "reason": "A feels airier and less crowded.",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 68.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": -2,
+            "reason": "B is shorter and more compact.",
+            "confidence": "medium",
+            "effective_delta": -2.0,
+            "applied_weight": 14.0,
+            "weighted_delta": -28.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A has clearer primary emphasis.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels more finished and straightforward.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses simpler, clearer controls.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A strongly matches light airy styling.",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -3,
+            "reason": "B provides more onboarding context.",
+            "confidence": "high",
+            "effective_delta": -3.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -27.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's main button is more obvious.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -2,
+            "reason": "B keeps more surrounding context visible.",
+            "confidence": "medium",
+            "effective_delta": -2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -14.0
+          }
+        ],
+        "avg_delta": 147.0,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15033::gpt_comp_s2w_15033_v1.png||gpt_comp_s2w_15033_v4.png",
+      "cid": "15033::gpt_comp_s2w_15033_v1.png>>gpt_comp_s2w_15033_v4.png::T000032",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated list sections",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels slightly more open overall",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 17.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": -3,
+            "reason": "B adds more explanatory labels",
+            "confidence": "high",
+            "effective_delta": -3.0,
+            "applied_weight": 14.0,
+            "weighted_delta": -42.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": -2,
+            "reason": "B has clearer urgency and emphasis",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": -26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": -1,
+            "reason": "B feels more information-complete",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": -12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 3,
+            "reason": "A uses simpler, lighter controls",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 33.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A is much lighter and airier",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly clearer navigation context",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -1,
+            "reason": "B's alert actions are more obvious",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -2,
+            "reason": "B keeps more contextual details visible",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -14.0
+          }
+        ],
+        "avg_delta": 25.0,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15033::gpt_comp_s2w_15033_v2.png||gpt_comp_s2w_15033_v3.png",
+      "cid": "15033::gpt_comp_s2w_15033_v2.png>>gpt_comp_s2w_15033_v3.png::T000033",
+      "true_winner": "B",
+      "final_choice_raw": "A << B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated header and list",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier with less visual density",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter, simpler labels",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A emphasizes title and alert cards clearly",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 2,
+            "reason": "A feels complete despite fewer alerts",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A uses simpler controls and fewer chips",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 4,
+            "reason": "A is much lighter and less heavy",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has modest status cues, less navigation",
+            "confidence": "low",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -1,
+            "reason": "B's refresh button is more prominent",
+            "confidence": "high",
+            "effective_delta": -1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 2,
+            "reason": "A keeps context cleaner and more visible",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 14.0
+          }
+        ],
+        "avg_delta": 168.66666666666666,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "14289::gpt_comp_s2w_14289_v2.png||gpt_comp_s2w_14289_v4.png",
+      "cid": "14289::gpt_comp_s2w_14289_v2.png>>gpt_comp_s2w_14289_v4.png::T000028",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 1,
+            "reason": "A uses clearer separated sections.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 18.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 2,
+            "reason": "A feels airier with less visual density.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 34.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": -1,
+            "reason": "B is slightly shorter and tighter.",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": -14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has a more obvious main headline.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 2,
+            "reason": "A feels more complete and ready.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A presents controls more straightforwardly.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 2,
+            "reason": "A is lighter and less visually heavy.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 20.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -1,
+            "reason": "B gives slightly more flow context.",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's primary button is more dominant.",
+            "confidence": "high",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps page context more visible.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 17.0,
+        "votes_a": 2,
+        "votes_b": 1,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15033::gpt_comp_s2w_15033_v1.png||gpt_comp_s2w_15033_v3.png",
+      "cid": "15033::gpt_comp_s2w_15033_v1.png>>gpt_comp_s2w_15033_v3.png::T000031",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated cards.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier, less visually busy.",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly less on-screen text.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A's hierarchy is clearer and calmer.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": -2,
+            "reason": "B feels more populated and finished.",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": -24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A uses simpler, less segmented controls.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A is much lighter and airier.",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -1,
+            "reason": "B provides stronger flow context.",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -1,
+            "reason": "B's refresh action stands out more.",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps context visible without distractions.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 116.66666666666667,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15033::gpt_comp_s2w_15033_v3.png||gpt_comp_s2w_15033_v4.png",
+      "cid": "15033::gpt_comp_s2w_15033_v3.png>>gpt_comp_s2w_15033_v4.png::T000035",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated alert cards",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier with less density",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter, simpler labels",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": -2,
+            "reason": "B emphasizes severity and key metrics",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": -26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A looks finished, though less actionable",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses simpler filters and rows",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 2,
+            "reason": "A is lighter and less visually heavy",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 20.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -1,
+            "reason": "B shows live status and update context",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's refresh button is more prominent",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -2,
+            "reason": "B keeps more contextual details visible",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -14.0
+          }
+        ],
+        "avg_delta": 74.33333333333333,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15366::gpt_comp_s2w_15366_v1.png||gpt_comp_s2w_15366_v2.png",
+      "cid": "15366::gpt_comp_s2w_15366_v1.png>>gpt_comp_s2w_15366_v2.png::T000036",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly cleaner grouping",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 18.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 2,
+            "reason": "A feels a bit less crowded",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 34.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A uses slightly shorter copy",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A emphasizes the main title better",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": -2,
+            "reason": "B feels more populated and finished",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": -24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A presents controls more straightforwardly",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 1,
+            "reason": "A is lighter and less visually heavy",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 10.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": -1,
+            "reason": "B provides more flow context",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": -9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -2,
+            "reason": "B's save button is more prominent",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -16.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -2,
+            "reason": "B keeps more relevant context visible",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -14.0
+          }
+        ],
+        "avg_delta": 21.666666666666668,
+        "votes_a": 2,
+        "votes_b": 1,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15033::gpt_comp_s2w_15033_v2.png||gpt_comp_s2w_15033_v4.png",
+      "cid": "15033::gpt_comp_s2w_15033_v2.png>>gpt_comp_s2w_15033_v4.png::T000034",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated cards",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier and less dense",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter labels",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has simpler, clearer emphasis",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": -1,
+            "reason": "B shows richer alert details",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": -12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses simpler row actions",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 4,
+            "reason": "A is lighter and less heavy",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 0,
+            "reason": "Both provide similar flow context",
+            "confidence": "medium",
+            "effective_delta": 0.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 0.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": 1,
+            "reason": "A's refresh button reads clearer",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": 8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": -2,
+            "reason": "B exposes more alert context",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": -14.0
+          }
+        ],
+        "avg_delta": 136.33333333333334,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15366::gpt_comp_s2w_15366_v1.png||gpt_comp_s2w_15366_v3.png",
+      "cid": "15366::gpt_comp_s2w_15366_v1.png>>gpt_comp_s2w_15366_v3.png::T000037",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated cards",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier and less crowded",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter, simpler copy",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A presents clearer primary emphasis",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 26.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 3,
+            "reason": "A looks more finished and usable",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses simpler, clearer control grouping",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 22.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A is much lighter and less heavy",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has clearer navigation context",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -2,
+            "reason": "B's save button is more prominent",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -16.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 2,
+            "reason": "A keeps context more visible overall",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 14.0
+          }
+        ],
+        "avg_delta": 225.0,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15366::gpt_comp_s2w_15366_v2.png||gpt_comp_s2w_15366_v3.png",
+      "cid": "15366::gpt_comp_s2w_15366_v2.png>>gpt_comp_s2w_15366_v3.png::T000039",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated cards",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier, less crowded",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has slightly shorter copy",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 14.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has clearer primary focus",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 2,
+            "reason": "A looks more finished and usable",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 24.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A presents controls more straightforwardly",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 5,
+            "reason": "A strongly matches light airy styling",
+            "confidence": "high",
+            "effective_delta": 5.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 50.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A is less visually heavy",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -1,
+            "reason": "B's save button is more prominent",
+            "confidence": "medium",
+            "effective_delta": -1.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -8.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps context cleaner and visible",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 158.0,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "15366::gpt_comp_s2w_15366_v1.png||gpt_comp_s2w_15366_v4.png",
+      "cid": "15366::gpt_comp_s2w_15366_v1.png>>gpt_comp_s2w_15366_v4.png::T000038",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "clear_section_structure",
+            "relative_score_a_minus_b": 2,
+            "reason": "A uses cleaner separated cards.",
+            "confidence": "medium",
+            "effective_delta": 2.0,
+            "applied_weight": 18.0,
+            "weighted_delta": 36.0
+          },
+          {
+            "criterion": "spacious_low_clutter_layout",
+            "relative_score_a_minus_b": 3,
+            "reason": "A feels airier, less crowded.",
+            "confidence": "high",
+            "effective_delta": 3.0,
+            "applied_weight": 17.0,
+            "weighted_delta": 51.0
+          },
+          {
+            "criterion": "concise_scannable_copy",
+            "relative_score_a_minus_b": 2,
+            "reason": "A has shorter, simpler copy.",
+            "confidence": "high",
+            "effective_delta": 2.0,
+            "applied_weight": 14.0,
+            "weighted_delta": 28.0
+          },
+          {
+            "criterion": "strong_visual_hierarchy",
+            "relative_score_a_minus_b": 1,
+            "reason": "A has clearer primary emphasis.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 13.0,
+            "weighted_delta": 13.0
+          },
+          {
+            "criterion": "complete_actionable_state",
+            "relative_score_a_minus_b": 1,
+            "reason": "A feels more finished and actionable.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 12.0,
+            "weighted_delta": 12.0
+          },
+          {
+            "criterion": "simple_control_presentation",
+            "relative_score_a_minus_b": 1,
+            "reason": "A presents controls more straightforwardly.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 11.0,
+            "weighted_delta": 11.0
+          },
+          {
+            "criterion": "light_airy_minimal_styling",
+            "relative_score_a_minus_b": 4,
+            "reason": "A is lighter and less heavy.",
+            "confidence": "high",
+            "effective_delta": 4.0,
+            "applied_weight": 10.0,
+            "weighted_delta": 40.0
+          },
+          {
+            "criterion": "clear_progress_and_navigation_cues",
+            "relative_score_a_minus_b": 1,
+            "reason": "A gives slightly clearer flow context.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 9.0,
+            "weighted_delta": 9.0
+          },
+          {
+            "criterion": "prominent_primary_action",
+            "relative_score_a_minus_b": -2,
+            "reason": "B's save button is more prominent.",
+            "confidence": "high",
+            "effective_delta": -2.0,
+            "applied_weight": 8.0,
+            "weighted_delta": -16.0
+          },
+          {
+            "criterion": "contextual_information_visibility",
+            "relative_score_a_minus_b": 1,
+            "reason": "A keeps context visible without overload.",
+            "confidence": "medium",
+            "effective_delta": 1.0,
+            "applied_weight": 7.0,
+            "weighted_delta": 7.0
+          }
+        ],
+        "avg_delta": 157.0,
+        "votes_a": 3,
+        "votes_b": 0,
+        "votes_tie": 0,
+        "derived_predicted_choice": "A"
+      }
+    }
+  ]
+}

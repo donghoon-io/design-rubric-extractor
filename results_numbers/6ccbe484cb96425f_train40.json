@@ -1,0 +1,3177 @@
+{
+  "annotator_id": "6ccbe484cb96425f",
+  "model": "gpt-5.4",
+  "experiment": "train_40_test_20",
+  "sample_sizes": {
+    "target_train_size": 40,
+    "actual_train_size": 40,
+    "test": 20
+  },
+  "niche_preference_profile": "Prefers interfaces with strong, explicit information hierarchy; clear sectioning; readable labels; and obvious action states. Often favors light neutral backgrounds with dark text, subtle purple accents, soft outlined or lightly elevated cards, and calmer visual treatment. Repeatedly prefers organized list/card structures over decorative or fragmented layouts, explicit labels over implicit/icon-only cues, and balanced CTA presentation with visible primary actions and clear selection feedback. In some contexts also likes denser, information-rich layouts when the hierarchy remains structured and scannable.",
+  "top_7_criteria": [
+    {
+      "criterion": "information_hierarchy_and_structure",
+      "description": "Prefers very clear hierarchy with prominent titles, section labels, grouped content, structured cards/lists, and easy-to-scan organization rather than flat, fragmented, or weakly structured layouts.",
+      "weight": 35.0
+    },
+    {
+      "criterion": "color_theme_and_contrast_preference",
+      "description": "Most often prefers light neutral backgrounds with dark text and restrained accent colors, especially subtle purple; generally rejects harsher dark themes or overly saturated, high-contrast color treatments unless used in a clearly structured data-rich context.",
+      "weight": 28.0
+    },
+    {
+      "criterion": "visual_density_and_spacing_balance",
+      "description": "Prefers balanced density: layouts that avoid clutter but also avoid wasteful emptiness, with breathable spacing, slimmer rows, and efficient use of space when content remains organized.",
+      "weight": 24.0
+    },
+    {
+      "criterion": "clear_action_clarity_and_cta_emphasis",
+      "description": "Prefers obvious, visible actions with strong CTA hierarchy, balanced button layouts, labeled actions, and clear primary/secondary distinction rather than hidden, weak, or ambiguous controls.",
+      "weight": 21.0
+    },
+    {
+      "criterion": "subtle_card_and_component_styling",
+      "description": "Prefers soft outlined or lightly elevated cards, moderate corner radius, restrained depth, and understated controls over heavy fills, exaggerated rounding, glowing treatments, or strong UI chrome.",
+      "weight": 20.0
+    },
+    {
+      "criterion": "readability_and_explicit_labeling",
+      "description": "Prefers high legibility, descriptive text labels, helper text, visible field labels, semantic badges, and explicit affordances instead of icon-only actions, placeholder-only labels, abbreviations, or low-contrast text.",
+      "weight": 18.0
+    },
+    {
+      "criterion": "minimal_clutter_with_focused_content",
+      "description": "Prefers cleaner compositions with fewer decorative elements, less visual noise, and focused content areas; rejects busy hero imagery, unnecessary icons, floating overlays, and attention-grabbing decoration that competes with the main task.",
+      "weight": 17.0
+    }
+  ],
+  "pair_analyses": [
+    {
+      "pair_id": "58376::gemini_comp_s2w_58376_v1.png||gemini_comp_s2w_58376_v2.png",
+      "cid": "58376::gemini_comp_s2w_58376_v1.png>>gemini_comp_s2w_58376_v2.png::T000414",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more actionable modal with stronger button emphasis and less visual clutter.",
+        "preferred_features": [
+          {
+            "dimension": "primary_cta_emphasis",
+            "preferred_trait_in_winner": "bright purple active-looking primary button",
+            "rejected_trait_in_loser": "muted gray disabled-looking primary button"
+          },
+          {
+            "dimension": "visual_simplicity",
+            "preferred_trait_in_winner": "no decorative icon, cleaner content hierarchy",
+            "rejected_trait_in_loser": "extra lock icon adds visual clutter"
+          },
+          {
+            "dimension": "text_density",
+            "preferred_trait_in_winner": "shorter, more compact checkbox and body text",
+            "rejected_trait_in_loser": "more wrapped, denser text blocks"
+          },
+          {
+            "dimension": "link_accent_color",
+            "preferred_trait_in_winner": "subtle purple links matching CTA",
+            "rejected_trait_in_loser": "brighter pink links drawing more attention"
+          },
+          {
+            "dimension": "layout_compactness",
+            "preferred_trait_in_winner": "tighter vertical spacing with balanced proportions",
+            "rejected_trait_in_loser": "looser spacing with more empty interior space"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "41874::gpt_comp_s2w_41874_v2.png||gpt_comp_s2w_41874_v3.png",
+      "cid": "41874::gpt_comp_s2w_41874_v2.png>>gpt_comp_s2w_41874_v3.png::T000291",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, lighter layout with clearer trigger frequency cues and more structured information hierarchy.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with soft gray surfaces",
+            "rejected_trait_in_loser": "dark navy background with high-contrast white cards"
+          },
+          {
+            "dimension": "information_encoding",
+            "preferred_trait_in_winner": "horizontal progress bars plus labeled frequency tags",
+            "rejected_trait_in_loser": "small repeated green bars without explicit category labels"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more open spacing and calmer, less crowded sections",
+            "rejected_trait_in_loser": "denser stacking with tighter grouping and heavier visual load"
+          },
+          {
+            "dimension": "hierarchy_clarity",
+            "preferred_trait_in_winner": "clear section separation and simpler, more readable content structure",
+            "rejected_trait_in_loser": "more competing elements, including extra footer sheet and darker header emphasis"
+          },
+          {
+            "dimension": "accent_usage",
+            "preferred_trait_in_winner": "selective accent colors tied to meaning and status",
+            "rejected_trait_in_loser": "mostly uniform purple and mint accents with less semantic differentiation"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "47573::gpt_comp_s2w_47573_v2.png||gpt_comp_s2w_47573_v4.png",
+      "cid": "47573::gpt_comp_s2w_47573_v2.png>>gpt_comp_s2w_47573_v4.png::T000340",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner light theme with clearer hierarchy, labeled actions, and more structured list organization.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with dark text",
+            "rejected_trait_in_loser": "dark background with light text"
+          },
+          {
+            "dimension": "action_clarity",
+            "preferred_trait_in_winner": "text-labeled actions like Edit and Remove",
+            "rejected_trait_in_loser": "icon-only actions without text labels"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear section header and reorder instruction text",
+            "rejected_trait_in_loser": "weaker hierarchy with minimal section labeling"
+          },
+          {
+            "dimension": "visual_affordances",
+            "preferred_trait_in_winner": "numbered badges and explicit drag handles",
+            "rejected_trait_in_loser": "plain avatars and subtler reorder cues"
+          },
+          {
+            "dimension": "card_styling",
+            "preferred_trait_in_winner": "soft outlined cards with subtle separation",
+            "rejected_trait_in_loser": "heavier high-contrast white cards on dark background"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "26818::gemini_comp_s2w_26818_v1.png||gemini_comp_s2w_26818_v4.png",
+      "cid": "26818::gemini_comp_s2w_26818_v1.png>>gemini_comp_s2w_26818_v4.png::T000146",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers a contained, card-based loading state with softer, more polished hierarchy.",
+        "preferred_features": [
+          {
+            "dimension": "loading_container",
+            "preferred_trait_in_winner": "loading indicator placed inside a centered card",
+            "rejected_trait_in_loser": "loading indicator floats directly on the page"
+          },
+          {
+            "dimension": "depth_and_elevation",
+            "preferred_trait_in_winner": "subtle shadow creates layered depth",
+            "rejected_trait_in_loser": "flat presentation with little visible elevation"
+          },
+          {
+            "dimension": "corner_radius",
+            "preferred_trait_in_winner": "rounded modal/card corners",
+            "rejected_trait_in_loser": "no distinct rounded container around loader"
+          },
+          {
+            "dimension": "visual_focus",
+            "preferred_trait_in_winner": "single compact focal element isolates the loading state",
+            "rejected_trait_in_loser": "loading state blends into surrounding page content"
+          },
+          {
+            "dimension": "spinner_style",
+            "preferred_trait_in_winner": "smaller, softer spinner with lighter contrast",
+            "rejected_trait_in_loser": "larger, darker spinner with stronger contrast"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "30987::gemini_comp_s2w_30987_v1.png||gemini_comp_s2w_30987_v4.png",
+      "cid": "30987::gemini_comp_s2w_30987_v1.png>>gemini_comp_s2w_30987_v4.png::T000200",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more structured contact layout with softer visuals and clearer usability.",
+        "preferred_features": [
+          {
+            "dimension": "layout_structure",
+            "preferred_trait_in_winner": "organized card-based sections with clear form layout",
+            "rejected_trait_in_loser": "oversized icon-dominated layout with weak content hierarchy"
+          },
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with subtle purple accents",
+            "rejected_trait_in_loser": "dark background with intense electric blue accents"
+          },
+          {
+            "dimension": "icon_treatment",
+            "preferred_trait_in_winner": "small contained icons inside soft circular badges",
+            "rejected_trait_in_loser": "huge bold outline icon overwhelming the page"
+          },
+          {
+            "dimension": "spacing_density",
+            "preferred_trait_in_winner": "balanced spacing that groups elements neatly",
+            "rejected_trait_in_loser": "excessive empty space caused by oversized graphics"
+          },
+          {
+            "dimension": "visual_tone",
+            "preferred_trait_in_winner": "polished, approachable, form-focused interface",
+            "rejected_trait_in_loser": "dramatic, high-contrast, decorative presentation"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "19961::gemini_comp_s2w_19961_v3.png||gemini_comp_s2w_19961_v4.png",
+      "cid": "19961::gemini_comp_s2w_19961_v3.png>>gemini_comp_s2w_19961_v4.png::T000101",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more grounded interface with clearer hierarchy and practical bottom navigation.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "warm dark gray background",
+            "rejected_trait_in_loser": "cool blue-black background"
+          },
+          {
+            "dimension": "navigation_layout",
+            "preferred_trait_in_winner": "centered title with minimal top bar and bottom tab navigation",
+            "rejected_trait_in_loser": "left-aligned title with floating action button"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear file path subtitle and structured card labels",
+            "rejected_trait_in_loser": "less explicit hierarchy with fewer contextual labels"
+          },
+          {
+            "dimension": "overlay_style",
+            "preferred_trait_in_winner": "compact rounded status card with subtle metrics and avatars",
+            "rejected_trait_in_loser": "wider floating badge with more utilitarian layout"
+          },
+          {
+            "dimension": "accent_usage",
+            "preferred_trait_in_winner": "restrained blue accents focused on selected action",
+            "rejected_trait_in_loser": "brighter cyan accents and prominent blue floating button"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "5763::gpt_comp_s2w_5763_v2.png||gpt_comp_s2w_5763_v3.png",
+      "cid": "5763::gpt_comp_s2w_5763_v2.png>>gpt_comp_s2w_5763_v3.png::T000405",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner light theme with clearer hierarchy, softer cards, and more modern structured actions.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with dark text",
+            "rejected_trait_in_loser": "dark background with bright blue header"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear section titles and readable content contrast",
+            "rejected_trait_in_loser": "lower-contrast text and visually crowded hierarchy"
+          },
+          {
+            "dimension": "card_styling",
+            "preferred_trait_in_winner": "soft elevated cards with subtle borders/shadows",
+            "rejected_trait_in_loser": "heavier outlined panels on dark surfaces"
+          },
+          {
+            "dimension": "action_button_treatment",
+            "preferred_trait_in_winner": "balanced side-by-side buttons with one strong primary CTA",
+            "rejected_trait_in_loser": "single long dark follow bar plus separate small icon button"
+          },
+          {
+            "dimension": "data_label_style",
+            "preferred_trait_in_winner": "descriptive text labels like positions and status",
+            "rejected_trait_in_loser": "compact badge abbreviations and icon-like markers"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "70484::gpt_comp_s2w_70484_v2.png||gpt_comp_s2w_70484_v3.png",
+      "cid": "70484::gpt_comp_s2w_70484_v2.png>>gpt_comp_s2w_70484_v3.png::T000519",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more premium card-based layout with stronger hierarchy and richer scheduling controls.",
+        "preferred_features": [
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "more detailed, feature-rich layout with multiple planning sections visible",
+            "rejected_trait_in_loser": "simpler, more condensed layout with fewer visible controls"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "strongly separated stacked cards with clear section emphasis",
+            "rejected_trait_in_loser": "flatter page flow with weaker separation between sections"
+          },
+          {
+            "dimension": "color_accent_style",
+            "preferred_trait_in_winner": "cool blue accents on a dark, high-contrast interface",
+            "rejected_trait_in_loser": "purple accents on a lighter, softer interface"
+          },
+          {
+            "dimension": "control_styling",
+            "preferred_trait_in_winner": "filled pill selections and prominent toggle controls",
+            "rejected_trait_in_loser": "lighter outlined pills and more subdued control treatment"
+          },
+          {
+            "dimension": "content_presentation",
+            "preferred_trait_in_winner": "immersive hero card with overlay text and richer course metadata",
+            "rejected_trait_in_loser": "more conventional top card with separated text blocks and tabs"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "41874::gpt_comp_s2w_41874_v2.png||gpt_comp_s2w_41874_v4.png",
+      "cid": "41874::gpt_comp_s2w_41874_v2.png>>gpt_comp_s2w_41874_v4.png::T000292",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, lighter, more structured layout with clearer trigger frequency cues.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with subtle accents",
+            "rejected_trait_in_loser": "dark navy header with heavier contrast"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear list rows with uppercase section label and concise metadata",
+            "rejected_trait_in_loser": "denser cards with weaker hierarchy and more cluttered supporting text"
+          },
+          {
+            "dimension": "component_style",
+            "preferred_trait_in_winner": "flat list items separated by thin dividers",
+            "rejected_trait_in_loser": "large rounded cards for each trigger"
+          },
+          {
+            "dimension": "frequency_indication",
+            "preferred_trait_in_winner": "text badges like 'Often' and 'Sometimes' plus dot bars",
+            "rejected_trait_in_loser": "only green bar indicators with numeric last-30d text"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more whitespace and slimmer rows",
+            "rejected_trait_in_loser": "bulkier blocks with tighter packed content"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "68809::gpt_comp_s2w_68809_v3.png||gpt_comp_s2w_68809_v4.png",
+      "cid": "68809::gpt_comp_s2w_68809_v3.png>>gpt_comp_s2w_68809_v4.png::T000509",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers a darker, more premium, compact interface with stronger visual emphasis.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "dark navy background with neon accents",
+            "rejected_trait_in_loser": "light gray/white background with softer accents"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more compact, tightly grouped layout",
+            "rejected_trait_in_loser": "more spacious, spread-out layout"
+          },
+          {
+            "dimension": "contrast_emphasis",
+            "preferred_trait_in_winner": "high-contrast cards and CTA with vivid highlights",
+            "rejected_trait_in_loser": "lower-contrast sections with subtler emphasis"
+          },
+          {
+            "dimension": "corner_radius",
+            "preferred_trait_in_winner": "larger rounded corners on cards and panels",
+            "rejected_trait_in_loser": "smaller, gentler corner rounding"
+          },
+          {
+            "dimension": "plan_highlighting",
+            "preferred_trait_in_winner": "selected plan marked with badges and glowing outline",
+            "rejected_trait_in_loser": "selected plan indicated more plainly with simple border"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "45556::gpt_comp_s2w_45556_v2.png||gpt_comp_s2w_45556_v3.png",
+      "cid": "45556::gpt_comp_s2w_45556_v2.png>>gpt_comp_s2w_45556_v3.png::T000327",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, brighter, more structured layout with calmer visuals and clearer reading hierarchy.",
+        "preferred_features": [
+          {
+            "dimension": "background_theme",
+            "preferred_trait_in_winner": "light main background with dark text",
+            "rejected_trait_in_loser": "dark main background with low-contrast text"
+          },
+          {
+            "dimension": "visual_clutter",
+            "preferred_trait_in_winner": "minimal decorative elements and fewer distractions",
+            "rejected_trait_in_loser": "extra floating stickers, thumbnails, and promotional footer"
+          },
+          {
+            "dimension": "content_structure",
+            "preferred_trait_in_winner": "single clear document card with labeled sections",
+            "rejected_trait_in_loser": "multiple stacked sections with less distinct hierarchy"
+          },
+          {
+            "dimension": "readability_density",
+            "preferred_trait_in_winner": "more open spacing and easier-to-scan text blocks",
+            "rejected_trait_in_loser": "denser text presentation with tighter visual packing"
+          },
+          {
+            "dimension": "tone_of_interface",
+            "preferred_trait_in_winner": "formal, straightforward consent flow",
+            "rejected_trait_in_loser": "more playful, decorative, app-marketing feel"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "7606::gemini_comp_s2w_7606_v1.png||gemini_comp_s2w_7606_v3.png",
+      "cid": "7606::gemini_comp_s2w_7606_v1.png>>gemini_comp_s2w_7606_v3.png::T000553",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner structured form, richer content cards, and more modern travel-focused visual hierarchy.",
+        "preferred_features": [
+          {
+            "dimension": "form_layout",
+            "preferred_trait_in_winner": "compact multi-column input grid with balanced grouped fields",
+            "rejected_trait_in_loser": "larger stacked form with less compact field organization"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "more useful details shown upfront like timestamps, fares, and trip type",
+            "rejected_trait_in_loser": "sparser content with fewer contextual details visible"
+          },
+          {
+            "dimension": "icon_style",
+            "preferred_trait_in_winner": "consistent minimal outline icons integrated across fields and header",
+            "rejected_trait_in_loser": "mixed icon emphasis with a more isolated highlighted swap control"
+          },
+          {
+            "dimension": "content_card_style",
+            "preferred_trait_in_winner": "visual destination cards with soft color blocks and route emphasis",
+            "rejected_trait_in_loser": "mostly plain white list cards with minimal visual differentiation"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "clearer section contrast with stronger emphasis on routes and recent activity",
+            "rejected_trait_in_loser": "heavier emphasis on the form area with weaker lower-page hierarchy"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "33934::gpt_comp_s2w_33934_v1.png||gpt_comp_s2w_33934_v3.png",
+      "cid": "33934::gpt_comp_s2w_33934_v1.png>>gpt_comp_s2w_33934_v3.png::T000229",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers immersive dark, data-rich interface with polished cards and nuanced status cues.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "dark navy background with neon blue-green accents",
+            "rejected_trait_in_loser": "light gray cards on dark background with purple accents"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "data-rich layout with multiple metrics and detailed sections",
+            "rejected_trait_in_loser": "simpler layout with fewer metrics and less detail"
+          },
+          {
+            "dimension": "data_visualization_style",
+            "preferred_trait_in_winner": "circular progress ring and thin line chart",
+            "rejected_trait_in_loser": "large numeric summary and thick bar chart"
+          },
+          {
+            "dimension": "status_signal_style",
+            "preferred_trait_in_winner": "color-coded badges and icons for quality and snore severity",
+            "rejected_trait_in_loser": "minimal text labels with weaker visual differentiation"
+          },
+          {
+            "dimension": "card_styling",
+            "preferred_trait_in_winner": "layered dark cards with subtle borders and depth",
+            "rejected_trait_in_loser": "flat light cards with minimal depth"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "59493::gemini_comp_s2w_59493_v2.png||gemini_comp_s2w_59493_v3.png",
+      "cid": "59493::gemini_comp_s2w_59493_v2.png>>gemini_comp_s2w_59493_v3.png::T000429",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "It feels clearer, more guided, and better structured for form entry.",
+        "preferred_features": [
+          {
+            "dimension": "label_placement",
+            "preferred_trait_in_winner": "separate field label above the input",
+            "rejected_trait_in_loser": "label only appears as placeholder inside the input"
+          },
+          {
+            "dimension": "input_guidance",
+            "preferred_trait_in_winner": "example placeholder with dosage details",
+            "rejected_trait_in_loser": "generic placeholder without example context"
+          },
+          {
+            "dimension": "vertical_spacing",
+            "preferred_trait_in_winner": "more breathing room around label and field",
+            "rejected_trait_in_loser": "tighter spacing with elements packed near the top"
+          },
+          {
+            "dimension": "form_hierarchy",
+            "preferred_trait_in_winner": "clearer separation between section title and input control",
+            "rejected_trait_in_loser": "flatter hierarchy with less distinction between elements"
+          },
+          {
+            "dimension": "content_density",
+            "preferred_trait_in_winner": "slightly richer, more descriptive form presentation",
+            "rejected_trait_in_loser": "more minimal but less informative presentation"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "8548::gemini_comp_s2w_8548_v1.png||gemini_comp_s2w_8548_v4.png",
+      "cid": "8548::gemini_comp_s2w_8548_v1.png>>gemini_comp_s2w_8548_v4.png::T000566",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more structured layout with softer shapes and more focused consent options.",
+        "preferred_features": [
+          {
+            "dimension": "icon_shape",
+            "preferred_trait_in_winner": "circular search icon badge",
+            "rejected_trait_in_loser": "rounded-square search icon badge"
+          },
+          {
+            "dimension": "headline_tone",
+            "preferred_trait_in_winner": "friendlier headline with exclamation and guide-oriented subtitle",
+            "rejected_trait_in_loser": "more neutral headline with speed-focused subtitle"
+          },
+          {
+            "dimension": "content_structure",
+            "preferred_trait_in_winner": "sectioned terms content with numbered headings",
+            "rejected_trait_in_loser": "dense paragraph-heavy terms content"
+          },
+          {
+            "dimension": "checkbox_copy",
+            "preferred_trait_in_winner": "split consent into two simple, specific checkboxes",
+            "rejected_trait_in_loser": "broader, more bundled checkbox statements"
+          },
+          {
+            "dimension": "button_shape",
+            "preferred_trait_in_winner": "subtly rounded rectangular primary button",
+            "rejected_trait_in_loser": "more pill-shaped primary button"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "19961::gemini_comp_s2w_19961_v2.png||gemini_comp_s2w_19961_v3.png",
+      "cid": "19961::gemini_comp_s2w_19961_v2.png>>gemini_comp_s2w_19961_v3.png::T000099",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers a more immersive, structured, dashboard-like coding interface with clearer hierarchy.",
+        "preferred_features": [
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "richer interface with analytics card and bottom action panel",
+            "rejected_trait_in_loser": "sparser layout with minimal overlays and single floating action button"
+          },
+          {
+            "dimension": "layout_structure",
+            "preferred_trait_in_winner": "clearly segmented sections with header, code area, widget, and dock",
+            "rejected_trait_in_loser": "more continuous single-pane layout with fewer distinct regions"
+          },
+          {
+            "dimension": "component_style",
+            "preferred_trait_in_winner": "larger glassmorphic cards with soft translucent panels",
+            "rejected_trait_in_loser": "smaller flatter overlay chip and simpler solid blocks"
+          },
+          {
+            "dimension": "navigation_pattern",
+            "preferred_trait_in_winner": "persistent bottom toolbar with labeled actions",
+            "rejected_trait_in_loser": "floating circular button with less visible action set"
+          },
+          {
+            "dimension": "visual_emphasis",
+            "preferred_trait_in_winner": "stronger focal hierarchy using a prominent central analysis widget",
+            "rejected_trait_in_loser": "focus remains mostly on code with only a small status badge"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "57893::gpt_comp_s2w_57893_v1.png||gpt_comp_s2w_57893_v2.png",
+      "cid": "57893::gpt_comp_s2w_57893_v1.png>>gpt_comp_s2w_57893_v2.png::T000408",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner hierarchy, clearer status feedback, and more polished, modern controls.",
+        "preferred_features": [
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear section labels with selected-date summary near top",
+            "rejected_trait_in_loser": "weaker hierarchy with less prominent status summary"
+          },
+          {
+            "dimension": "calendar_legibility",
+            "preferred_trait_in_winner": "higher-contrast dates with colored weekend emphasis",
+            "rejected_trait_in_loser": "fainter dates with minimal emphasis and lower contrast"
+          },
+          {
+            "dimension": "selection_feedback",
+            "preferred_trait_in_winner": "selected day shown with filled indicator inside rounded highlight",
+            "rejected_trait_in_loser": "selected day shown with thin outline only"
+          },
+          {
+            "dimension": "preset_chip_style",
+            "preferred_trait_in_winner": "outlined pills with small colored dots for quick presets",
+            "rejected_trait_in_loser": "plain filled pills without distinct color coding"
+          },
+          {
+            "dimension": "call_to_action_prominence",
+            "preferred_trait_in_winner": "solid colored continue button with strong visibility",
+            "rejected_trait_in_loser": "washed-out translucent continue button with weak emphasis"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "16084::gemini_comp_s2w_16084_v3.png||gemini_comp_s2w_16084_v4.png",
+      "cid": "16084::gemini_comp_s2w_16084_v3.png>>gemini_comp_s2w_16084_v4.png::T000053",
+      "human_choice": "A",
+      "preference_strength": 2,
+      "final_choice_raw": "A >> B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "More actionable, polished, and reassuring with stronger hierarchy and friendlier purple emphasis.",
+        "preferred_features": [
+          {
+            "dimension": "accent_color",
+            "preferred_trait_in_winner": "purple accent and primary button",
+            "rejected_trait_in_loser": "blue icon accent only"
+          },
+          {
+            "dimension": "action_clarity",
+            "preferred_trait_in_winner": "clear primary and secondary action buttons",
+            "rejected_trait_in_loser": "no visible action buttons"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "includes supporting privacy reassurance text",
+            "rejected_trait_in_loser": "minimal explanation with no reassurance footer"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "strong CTA emphasis with prominent button-led hierarchy",
+            "rejected_trait_in_loser": "flatter hierarchy centered on icon and text"
+          },
+          {
+            "dimension": "typography_tone",
+            "preferred_trait_in_winner": "title case headline with softer, friendlier tone",
+            "rejected_trait_in_loser": "all-lowercase headline with more neutral tone"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "19961::gemini_comp_s2w_19961_v1.png||gemini_comp_s2w_19961_v4.png",
+      "cid": "19961::gemini_comp_s2w_19961_v1.png>>gemini_comp_s2w_19961_v4.png::T000098",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers a warmer, cleaner editor with centered header and structured bottom navigation.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "warm charcoal dark background",
+            "rejected_trait_in_loser": "cool navy-blue dark background"
+          },
+          {
+            "dimension": "header_alignment",
+            "preferred_trait_in_winner": "centered file title with subtitle",
+            "rejected_trait_in_loser": "left-aligned file title only"
+          },
+          {
+            "dimension": "navigation_style",
+            "preferred_trait_in_winner": "full-width bottom tab bar with labeled actions",
+            "rejected_trait_in_loser": "small floating action panel on the right"
+          },
+          {
+            "dimension": "overlay_card_style",
+            "preferred_trait_in_winner": "compact rounded status card with progress bar and avatars",
+            "rejected_trait_in_loser": "wider status card with flag icon and metric labels"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more open, minimal layout with fewer competing elements",
+            "rejected_trait_in_loser": "busier layout with multiple floating panels"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "3498::gemini_comp_s2w_3498_v1.png||gemini_comp_s2w_3498_v3.png",
+      "cid": "3498::gemini_comp_s2w_3498_v1.png>>gemini_comp_s2w_3498_v3.png::T000235",
+      "human_choice": "A",
+      "preference_strength": 2,
+      "final_choice_raw": "A >> B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers a darker, more premium, cleaner card layout with stronger visual contrast.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "dark background with vivid accent cards",
+            "rejected_trait_in_loser": "light gray background with softer overall contrast"
+          },
+          {
+            "dimension": "visual_style",
+            "preferred_trait_in_winner": "more premium, minimal presentation",
+            "rejected_trait_in_loser": "more playful, generic ecommerce presentation"
+          },
+          {
+            "dimension": "card_imagery",
+            "preferred_trait_in_winner": "abstract gradient headers without icons",
+            "rejected_trait_in_loser": "large centered icons and text on card headers"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "fewer top-level elements and more focused content",
+            "rejected_trait_in_loser": "extra header and search bar creating busier layout"
+          },
+          {
+            "dimension": "typography_contrast",
+            "preferred_trait_in_winner": "larger, bolder headings with stronger hierarchy",
+            "rejected_trait_in_loser": "smaller, lighter text hierarchy"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "9791::gpt_comp_s2w_9791_v1.png||gpt_comp_s2w_9791_v4.png",
+      "cid": "9791::gpt_comp_s2w_9791_v1.png>>gpt_comp_s2w_9791_v4.png::T000596",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "They preferred a darker, more structured, modern interface with stronger visual hierarchy.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "dark navy background with bright blue accents",
+            "rejected_trait_in_loser": "light gray background with softer purple accents"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "denser layout showing more controls and content per screen",
+            "rejected_trait_in_loser": "more spaced-out layout with larger gaps between sections"
+          },
+          {
+            "dimension": "section_structure",
+            "preferred_trait_in_winner": "content grouped into clearly bordered panels and list rows",
+            "rejected_trait_in_loser": "content separated more loosely with lighter card boundaries"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "stronger contrast and uppercase labels for clearer hierarchy",
+            "rejected_trait_in_loser": "softer contrast and mixed-case labels with subtler emphasis"
+          },
+          {
+            "dimension": "control_styling",
+            "preferred_trait_in_winner": "crisper, high-contrast checkboxes and toggles",
+            "rejected_trait_in_loser": "rounder, softer controls with lower visual emphasis"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "37185::gemini_comp_s2w_37185_v1.png||gemini_comp_s2w_37185_v4.png",
+      "cid": "37185::gemini_comp_s2w_37185_v1.png>>gemini_comp_s2w_37185_v4.png::T000248",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, brighter, more legible layout with softer, friendlier visual styling.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with dark text",
+            "rejected_trait_in_loser": "very dark background with low-contrast text"
+          },
+          {
+            "dimension": "text_legibility",
+            "preferred_trait_in_winner": "high-contrast headline and body copy",
+            "rejected_trait_in_loser": "muted headline and dimmer supporting text"
+          },
+          {
+            "dimension": "icon_style",
+            "preferred_trait_in_winner": "soft circular icon badge with playful purple illustration",
+            "rejected_trait_in_loser": "plain outlined icon without soft container"
+          },
+          {
+            "dimension": "visual_tone",
+            "preferred_trait_in_winner": "friendly, airy, approachable aesthetic",
+            "rejected_trait_in_loser": "serious, stark, high-tech aesthetic"
+          },
+          {
+            "dimension": "button_styling",
+            "preferred_trait_in_winner": "purple CTA with subtle depth and softer presence",
+            "rejected_trait_in_loser": "brighter blue CTA with flatter, harsher contrast"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "58376::gemini_comp_s2w_58376_v2.png||gemini_comp_s2w_58376_v4.png",
+      "cid": "58376::gemini_comp_s2w_58376_v2.png>>gemini_comp_s2w_58376_v4.png::T000418",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers calmer, softer, more restrained consent UI with gentler visual emphasis.",
+        "preferred_features": [
+          {
+            "dimension": "background_tone",
+            "preferred_trait_in_winner": "darker muted gray-purple background",
+            "rejected_trait_in_loser": "lighter pale lavender background"
+          },
+          {
+            "dimension": "accent_intensity",
+            "preferred_trait_in_winner": "soft pink accents used sparingly",
+            "rejected_trait_in_loser": "bold saturated pink accents used prominently"
+          },
+          {
+            "dimension": "primary_button_emphasis",
+            "preferred_trait_in_winner": "subdued low-contrast disabled-looking primary button",
+            "rejected_trait_in_loser": "high-contrast bright pink primary button"
+          },
+          {
+            "dimension": "visual_decoration",
+            "preferred_trait_in_winner": "small lock icon with subtle circular badge",
+            "rejected_trait_in_loser": "no icon or decorative focal element"
+          },
+          {
+            "dimension": "overall_mood",
+            "preferred_trait_in_winner": "more minimal, quiet, and softened presentation",
+            "rejected_trait_in_loser": "more direct, assertive, and attention-grabbing presentation"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "47573::gpt_comp_s2w_47573_v2.png||gpt_comp_s2w_47573_v3.png",
+      "cid": "47573::gpt_comp_s2w_47573_v2.png>>gpt_comp_s2w_47573_v3.png::T000339",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner light interface with clearer hierarchy, structured list grouping, and more polished controls.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light gray background with dark text",
+            "rejected_trait_in_loser": "dark background with light text"
+          },
+          {
+            "dimension": "list_grouping",
+            "preferred_trait_in_winner": "single unified list container with divider lines",
+            "rejected_trait_in_loser": "separate floating cards for each contact"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "prominent title and clear instructional helper text",
+            "rejected_trait_in_loser": "fainter title and less structured supporting text"
+          },
+          {
+            "dimension": "action_button_style",
+            "preferred_trait_in_winner": "compact top-right Add button and bottom paired actions",
+            "rejected_trait_in_loser": "large bottom Add Speed Dial button with less balanced actions"
+          },
+          {
+            "dimension": "ordering_affordance",
+            "preferred_trait_in_winner": "explicit numbered reorder handles for each row",
+            "rejected_trait_in_loser": "plain drag handles without numbered position cues"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "43768::gemini_comp_s2w_43768_v1.png||gemini_comp_s2w_43768_v3.png",
+      "cid": "43768::gemini_comp_s2w_43768_v1.png>>gemini_comp_s2w_43768_v3.png::T000313",
+      "human_choice": "A",
+      "preference_strength": 2,
+      "final_choice_raw": "A >> B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers a softer, chat-integrated sticker picker with clearer categorization and gentler contrast.",
+        "preferred_features": [
+          {
+            "dimension": "context_integration",
+            "preferred_trait_in_winner": "chat-integrated bottom sheet within conversation",
+            "rejected_trait_in_loser": "standalone full-screen sticker browser"
+          },
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "neutral charcoal dark theme",
+            "rejected_trait_in_loser": "deep navy blue dark theme"
+          },
+          {
+            "dimension": "information_architecture",
+            "preferred_trait_in_winner": "stickers grouped by expressive categories and sections",
+            "rejected_trait_in_loser": "sticker packs shown as titled tiles"
+          },
+          {
+            "dimension": "search_and_navigation_density",
+            "preferred_trait_in_winner": "prominent search bar with multiple category tabs",
+            "rejected_trait_in_loser": "lighter navigation with tabs and small icon actions"
+          },
+          {
+            "dimension": "card_shape_and_softness",
+            "preferred_trait_in_winner": "softer rounded cards and pill-shaped controls",
+            "rejected_trait_in_loser": "boxier rectangular tiles with less softened controls"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "70410::gemini_comp_s2w_70410_v2.png||gemini_comp_s2w_70410_v3.png",
+      "cid": "70410::gemini_comp_s2w_70410_v2.png>>gemini_comp_s2w_70410_v3.png::T000513",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more guided icon workflow with organized browsing and less visual clutter.",
+        "preferred_features": [
+          {
+            "dimension": "content_organization",
+            "preferred_trait_in_winner": "search bar and category chips for structured browsing",
+            "rejected_trait_in_loser": "floating shortcut panel with no visible browsing structure"
+          },
+          {
+            "dimension": "workflow_guidance",
+            "preferred_trait_in_winner": "clear central prompt with dashed placeholder and plus icon",
+            "rejected_trait_in_loser": "generic empty canvas prompt without strong action cue"
+          },
+          {
+            "dimension": "top_bar_clarity",
+            "preferred_trait_in_winner": "minimal top bar with prominent Done button",
+            "rejected_trait_in_loser": "text title and multiple utility icons competing for attention"
+          },
+          {
+            "dimension": "visual_clutter",
+            "preferred_trait_in_winner": "clean layout with controls docked into fixed sections",
+            "rejected_trait_in_loser": "overlay floating control interrupts the canvas area"
+          },
+          {
+            "dimension": "icon_selection_visibility",
+            "preferred_trait_in_winner": "visible icon cards preview choices immediately",
+            "rejected_trait_in_loser": "no icon options shown on screen"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "9249::gpt_comp_s2w_9249_v1.png||gpt_comp_s2w_9249_v2.png",
+      "cid": "9249::gpt_comp_s2w_9249_v1.png>>gpt_comp_s2w_9249_v2.png::T000576",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, calmer, more minimal login with softer styling and less visual clutter.",
+        "preferred_features": [
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "minimal layout with few elements and ample empty space",
+            "rejected_trait_in_loser": "busier layout with extra header, helper text, divider, and SSO note"
+          },
+          {
+            "dimension": "background_treatment",
+            "preferred_trait_in_winner": "light airy background with subtle pastel gradient",
+            "rejected_trait_in_loser": "dark dramatic gradient header over a white content area"
+          },
+          {
+            "dimension": "branding_placement",
+            "preferred_trait_in_winner": "centered logo and title creating a focused single-column hierarchy",
+            "rejected_trait_in_loser": "top-left branding with separate welcome block and split attention"
+          },
+          {
+            "dimension": "imagery_emphasis",
+            "preferred_trait_in_winner": "small, unobtrusive supporting image tucked in the corner",
+            "rejected_trait_in_loser": "larger prominent photo inside the header drawing more attention"
+          },
+          {
+            "dimension": "input_and_button_styling",
+            "preferred_trait_in_winner": "softer rounded fields and button with lighter, cleaner controls",
+            "rejected_trait_in_loser": "heavier controls with stronger shadows and more pronounced UI chrome"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "46783::gpt_comp_s2w_46783_v1.png||gpt_comp_s2w_46783_v2.png",
+      "cid": "46783::gpt_comp_s2w_46783_v1.png>>gpt_comp_s2w_46783_v2.png::T000330",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, calmer settings layout with muted colors, clearer hierarchy, and more minimal controls.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral gray palette with subtle purple accents",
+            "rejected_trait_in_loser": "saturated purple gradient background with stronger blue accents"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more spacious layout with fewer visible controls per section",
+            "rejected_trait_in_loser": "denser layout with more stacked options and text"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear section titles and concise supporting descriptions",
+            "rejected_trait_in_loser": "more cluttered hierarchy with extra labels and repeated details"
+          },
+          {
+            "dimension": "component_styling",
+            "preferred_trait_in_winner": "subtle outlined cards and softer, understated input styling",
+            "rejected_trait_in_loser": "heavier filled cards with more prominent button treatments"
+          },
+          {
+            "dimension": "control_emphasis",
+            "preferred_trait_in_winner": "single highlighted selection with other options visually de-emphasized",
+            "rejected_trait_in_loser": "multiple options emphasized more equally with stronger contrast"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "31780::gemini_comp_s2w_31780_v3.png||gemini_comp_s2w_31780_v4.png",
+      "cid": "31780::gemini_comp_s2w_31780_v3.png>>gemini_comp_s2w_31780_v4.png::T000209",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more focused layout with stronger hierarchy and simpler, friendlier entry flow.",
+        "preferred_features": [
+          {
+            "dimension": "visual_complexity",
+            "preferred_trait_in_winner": "minimal, uncluttered composition",
+            "rejected_trait_in_loser": "busy hero area with many scattered photos"
+          },
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear centered headline and streamlined content order",
+            "rejected_trait_in_loser": "competing logo, imagery, headline, and supporting text"
+          },
+          {
+            "dimension": "imagery_style",
+            "preferred_trait_in_winner": "small grouped circular thumbnails",
+            "rejected_trait_in_loser": "large mixed-shape photos spread across the top"
+          },
+          {
+            "dimension": "call_to_action_structure",
+            "preferred_trait_in_winner": "two prominent stacked buttons for main actions",
+            "rejected_trait_in_loser": "single button with secondary sign-in as small text link"
+          },
+          {
+            "dimension": "brand_treatment",
+            "preferred_trait_in_winner": "simple text-based logo with subtle gradient emphasis",
+            "rejected_trait_in_loser": "large white logo over a decorative image-heavy header"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "72157::gemini_comp_s2w_72157_v3.png||gemini_comp_s2w_72157_v4.png",
+      "cid": "72157::gemini_comp_s2w_72157_v3.png>>gemini_comp_s2w_72157_v4.png::T000551",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more focused modal with darker backdrop and calmer, more premium visual contrast.",
+        "preferred_features": [
+          {
+            "dimension": "background_treatment",
+            "preferred_trait_in_winner": "dark, heavily subdued background behind modal",
+            "rejected_trait_in_loser": "bright photographic food background behind modal"
+          },
+          {
+            "dimension": "visual_clutter",
+            "preferred_trait_in_winner": "minimal, abstract backdrop with fewer distractions",
+            "rejected_trait_in_loser": "detailed scene with visible food and utensils"
+          },
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "cool green accent color",
+            "rejected_trait_in_loser": "warm orange accent color"
+          },
+          {
+            "dimension": "button_styling",
+            "preferred_trait_in_winner": "outlined pill button with layered border detail",
+            "rejected_trait_in_loser": "solid pill button without outline detail"
+          },
+          {
+            "dimension": "contrast_mood",
+            "preferred_trait_in_winner": "high-contrast, sleek, app-like presentation",
+            "rejected_trait_in_loser": "softer, airy, lifestyle-photo presentation"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "52014::gpt_comp_s2w_52014_v1.png||gpt_comp_s2w_52014_v3.png",
+      "cid": "52014::gpt_comp_s2w_52014_v1.png>>gpt_comp_s2w_52014_v3.png::T000367",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner hierarchy, softer cards, and more guided, visually friendly tagging experience.",
+        "preferred_features": [
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "clear sectioned layout with distinct cards and spacing",
+            "rejected_trait_in_loser": "denser continuous layout with weaker section separation"
+          },
+          {
+            "dimension": "tag_presentation",
+            "preferred_trait_in_winner": "tags shown contextually as small overlays on photos",
+            "rejected_trait_in_loser": "tags shown as separate pill selectors below gallery"
+          },
+          {
+            "dimension": "corner_radius",
+            "preferred_trait_in_winner": "softer, more rounded cards and buttons",
+            "rejected_trait_in_loser": "sharper, less rounded containers and controls"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "fewer elements with concise explanatory content",
+            "rejected_trait_in_loser": "more controls and text packed into the screen"
+          },
+          {
+            "dimension": "call_to_action_emphasis",
+            "preferred_trait_in_winner": "single prominent bottom CTA with minimal competing actions",
+            "rejected_trait_in_loser": "bottom CTA competes with visible secondary Skip action"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "35896::gemini_comp_s2w_35896_v1.png||gemini_comp_s2w_35896_v4.png",
+      "cid": "35896::gemini_comp_s2w_35896_v1.png>>gemini_comp_s2w_35896_v4.png::T000242",
+      "human_choice": "A",
+      "preference_strength": 1,
+      "final_choice_raw": "A > B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner grouped layout with stronger hierarchy and a more polished premium feel.",
+        "preferred_features": [
+          {
+            "dimension": "information_grouping",
+            "preferred_trait_in_winner": "account details combined in one structured card",
+            "rejected_trait_in_loser": "account number and status split into separate cards"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "clear top title and prominent balance card emphasis",
+            "rejected_trait_in_loser": "weaker title visibility and more fragmented emphasis"
+          },
+          {
+            "dimension": "background_contrast",
+            "preferred_trait_in_winner": "dark background with crisp white cards",
+            "rejected_trait_in_loser": "dark top but large light panel dominating lower screen"
+          },
+          {
+            "dimension": "layout_density",
+            "preferred_trait_in_winner": "compact, efficiently stacked sections with less empty space",
+            "rejected_trait_in_loser": "more vertical gaps and unused space"
+          },
+          {
+            "dimension": "card_styling",
+            "preferred_trait_in_winner": "subtle rounded cards with clean flat surfaces",
+            "rejected_trait_in_loser": "heavier rounded cards with glow and softer definition"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "33330::gpt_comp_s2w_33330_v1.png||gpt_comp_s2w_33330_v2.png",
+      "cid": "33330::gpt_comp_s2w_33330_v1.png>>gpt_comp_s2w_33330_v2.png::T000222",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner light interface with calmer hierarchy, softer cards, and more modern promotional styling.",
+        "preferred_features": [
+          {
+            "dimension": "color_theme",
+            "preferred_trait_in_winner": "light neutral background with dark text",
+            "rejected_trait_in_loser": "dark background with lower-contrast text"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more open spacing and fewer elements per section",
+            "rejected_trait_in_loser": "denser layout with tightly packed cards and controls"
+          },
+          {
+            "dimension": "card_styling",
+            "preferred_trait_in_winner": "subtle bordered cards with soft shadows",
+            "rejected_trait_in_loser": "heavier solid white cards on dark canvas"
+          },
+          {
+            "dimension": "promo_banner_style",
+            "preferred_trait_in_winner": "clean purple gradient banner with integrated image",
+            "rejected_trait_in_loser": "photo-heavy dark banner with stronger contrast"
+          },
+          {
+            "dimension": "corner_radius",
+            "preferred_trait_in_winner": "moderately rounded corners throughout",
+            "rejected_trait_in_loser": "more exaggerated rounded corners on inputs and cards"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "9640::gpt_comp_s2w_9640_v1.png||gpt_comp_s2w_9640_v4.png",
+      "cid": "9640::gpt_comp_s2w_9640_v1.png>>gpt_comp_s2w_9640_v4.png::T000590",
+      "human_choice": "B",
+      "preference_strength": 2,
+      "final_choice_raw": "A << B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, brighter layout with clearer hierarchy and friendlier, more approachable actions.",
+        "preferred_features": [
+          {
+            "dimension": "background_theme",
+            "preferred_trait_in_winner": "light overall background",
+            "rejected_trait_in_loser": "dark overall background"
+          },
+          {
+            "dimension": "content_hierarchy",
+            "preferred_trait_in_winner": "clear subtitle and section headings",
+            "rejected_trait_in_loser": "weaker text hierarchy with low-visibility messaging"
+          },
+          {
+            "dimension": "map_overlay_style",
+            "preferred_trait_in_winner": "informational card overlay on the map",
+            "rejected_trait_in_loser": "minimal abstract marker without clear status message"
+          },
+          {
+            "dimension": "action_button_style",
+            "preferred_trait_in_winner": "separate circular icon buttons with labels below",
+            "rejected_trait_in_loser": "wide bottom bar buttons integrated into footer"
+          },
+          {
+            "dimension": "visual_density",
+            "preferred_trait_in_winner": "more open whitespace and breathable spacing",
+            "rejected_trait_in_loser": "heavier, more crowded composition"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "44186::gemini_comp_s2w_44186_v2.png||gemini_comp_s2w_44186_v3.png",
+      "cid": "44186::gemini_comp_s2w_44186_v2.png>>gemini_comp_s2w_44186_v3.png::T000321",
+      "human_choice": "A",
+      "preference_strength": 2,
+      "final_choice_raw": "A >> B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Clearer hierarchy, stronger affordances, and more polished interactive feedback.",
+        "preferred_features": [
+          {
+            "dimension": "information_hierarchy",
+            "preferred_trait_in_winner": "clear modal title, search, and list structure",
+            "rejected_trait_in_loser": "flat undifferentiated rows with weak hierarchy"
+          },
+          {
+            "dimension": "selection_feedback",
+            "preferred_trait_in_winner": "highlighted selected row with checkmark",
+            "rejected_trait_in_loser": "no visible selected state or confirmation"
+          },
+          {
+            "dimension": "contrast_and_emphasis",
+            "preferred_trait_in_winner": "stronger contrast with emphasized active elements",
+            "rejected_trait_in_loser": "low-contrast monochrome presentation"
+          },
+          {
+            "dimension": "component_definition",
+            "preferred_trait_in_winner": "distinct card-like modal and input field boundaries",
+            "rejected_trait_in_loser": "minimal boundaries with barely separated sections"
+          },
+          {
+            "dimension": "visual_warmth",
+            "preferred_trait_in_winner": "friendly visuals with flags, icons, and soft accent color",
+            "rejected_trait_in_loser": "sterile text-line layout with almost no visual personality"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "62785::gpt_comp_s2w_62785_v2.png||gpt_comp_s2w_62785_v3.png",
+      "cid": "62785::gpt_comp_s2w_62785_v2.png>>gpt_comp_s2w_62785_v3.png::T000459",
+      "human_choice": "A",
+      "preference_strength": 2,
+      "final_choice_raw": "A >> B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Prefers realistic field-based lineup visualization with clearer hierarchy and stronger player-card emphasis.",
+        "preferred_features": [
+          {
+            "dimension": "layout_metaphor",
+            "preferred_trait_in_winner": "soccer pitch layout showing real positions spatially",
+            "rejected_trait_in_loser": "stacked list layout with abstract position rows"
+          },
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "richer player cards with photos, ratings, names, and status",
+            "rejected_trait_in_loser": "sparse placeholder rows with minimal player detail"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "clear sectioning with formation tabs, field zones, and prominent actions",
+            "rejected_trait_in_loser": "flatter hierarchy with similar-looking rows and controls"
+          },
+          {
+            "dimension": "player_representation",
+            "preferred_trait_in_winner": "individual card tiles for each slot and player",
+            "rejected_trait_in_loser": "uniform horizontal bars for all positions"
+          },
+          {
+            "dimension": "contrast_and_depth",
+            "preferred_trait_in_winner": "stronger contrast and layered cards over the field",
+            "rejected_trait_in_loser": "softer low-contrast translucent panels with less depth"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "32234::gemini_comp_s2w_32234_v2.png||gemini_comp_s2w_32234_v4.png",
+      "cid": "32234::gemini_comp_s2w_32234_v2.png>>gemini_comp_s2w_32234_v4.png::T000214",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "They preferred the more focused, modal-driven design with stronger emphasis and softer styling.",
+        "preferred_features": [
+          {
+            "dimension": "interaction_focus",
+            "preferred_trait_in_winner": "centered modal highlighting one active alarm",
+            "rejected_trait_in_loser": "full list view showing multiple alarms equally"
+          },
+          {
+            "dimension": "color_accent",
+            "preferred_trait_in_winner": "warm orange accent for key actions and time",
+            "rejected_trait_in_loser": "yellow accent with less cohesive emphasis"
+          },
+          {
+            "dimension": "background_treatment",
+            "preferred_trait_in_winner": "dimmed blurred background behind foreground content",
+            "rejected_trait_in_loser": "flat undimmed background with no depth separation"
+          },
+          {
+            "dimension": "corner_radius",
+            "preferred_trait_in_winner": "large rounded dialog and pill-shaped buttons",
+            "rejected_trait_in_loser": "mostly flat interface with minimal rounded containers"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "oversized central time and prominent primary action",
+            "rejected_trait_in_loser": "distributed hierarchy across list items and toggles"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "28349::gemini_comp_s2w_28349_v1.png||gemini_comp_s2w_28349_v2.png",
+      "cid": "28349::gemini_comp_s2w_28349_v1.png>>gemini_comp_s2w_28349_v2.png::T000168",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more information-dense forecast with refined hierarchy and less bulky card-heavy styling.",
+        "preferred_features": [
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "compact hourly list showing more forecast rows at once",
+            "rejected_trait_in_loser": "large cards and oversized detail panel showing less at once"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "clear text hierarchy with prominent title, subtitle, and section labels",
+            "rejected_trait_in_loser": "flatter hierarchy with less structured sectioning"
+          },
+          {
+            "dimension": "container_style",
+            "preferred_trait_in_winner": "minimal row-based layout with subtle outlined highlight card",
+            "rejected_trait_in_loser": "heavy filled blue cards and a large solid information block"
+          },
+          {
+            "dimension": "color_usage",
+            "preferred_trait_in_winner": "darker neutral background with restrained accent colors",
+            "rejected_trait_in_loser": "strong saturated blue surfaces dominating the interface"
+          },
+          {
+            "dimension": "content_relevance",
+            "preferred_trait_in_winner": "forward-looking summary and hourly conditions grouped in one flow",
+            "rejected_trait_in_loser": "separate current details panel emphasizing stats over forecast progression"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "26367::gpt_comp_s2w_26367_v2.png||gpt_comp_s2w_26367_v3.png",
+      "cid": "26367::gpt_comp_s2w_26367_v2.png>>gpt_comp_s2w_26367_v3.png::T000141",
+      "human_choice": "A",
+      "preference_strength": 2,
+      "final_choice_raw": "A >> B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Richer, clearer pricing cards with stronger hierarchy and more polished premium styling.",
+        "preferred_features": [
+          {
+            "dimension": "information_density",
+            "preferred_trait_in_winner": "feature-rich cards with multiple benefits listed",
+            "rejected_trait_in_loser": "minimal cards with short one-line descriptions"
+          },
+          {
+            "dimension": "visual_hierarchy",
+            "preferred_trait_in_winner": "large bold headings and clearly emphasized prices",
+            "rejected_trait_in_loser": "weaker contrast and less prominent text hierarchy"
+          },
+          {
+            "dimension": "card_styling",
+            "preferred_trait_in_winner": "filled dark gradient cards with subtle depth",
+            "rejected_trait_in_loser": "flat dark cards with thin white outlines"
+          },
+          {
+            "dimension": "accent_usage",
+            "preferred_trait_in_winner": "cool teal and purple accents for features and badges",
+            "rejected_trait_in_loser": "muted mixed accent pills with less cohesive emphasis"
+          },
+          {
+            "dimension": "layout_breathing_room",
+            "preferred_trait_in_winner": "more spacious layout with generous padding and separation",
+            "rejected_trait_in_loser": "tighter stacked layout with denser vertical compression"
+          }
+        ]
+      }
+    },
+    {
+      "pair_id": "60089::gemini_comp_s2w_60089_v2.png||gemini_comp_s2w_60089_v4.png",
+      "cid": "60089::gemini_comp_s2w_60089_v2.png>>gemini_comp_s2w_60089_v4.png::T000442",
+      "human_choice": "B",
+      "preference_strength": 1,
+      "final_choice_raw": "A < B",
+      "llm_output_valid": true,
+      "llm_analysis": {
+        "why_user_chose_winner": "Cleaner, more balanced modal with efficient horizontal actions and lighter secondary emphasis.",
+        "preferred_features": [
+          {
+            "dimension": "button_layout",
+            "preferred_trait_in_winner": "side-by-side action buttons",
+            "rejected_trait_in_loser": "stacked vertical action buttons"
+          },
+          {
+            "dimension": "secondary_button_emphasis",
+            "preferred_trait_in_winner": "outlined low-emphasis dismiss button",
+            "rejected_trait_in_loser": "filled gray dismiss button"
+          },
+          {
+            "dimension": "modal_size",
+            "preferred_trait_in_winner": "more compact dialog footprint",
+            "rejected_trait_in_loser": "larger taller dialog"
+          },
+          {
+            "dimension": "content_density",
+            "preferred_trait_in_winner": "tighter spacing with concise layout",
+            "rejected_trait_in_loser": "looser spacing with more vertical padding"
+          },
+          {
+            "dimension": "visual_balance",
+            "preferred_trait_in_winner": "actions evenly balanced across the bottom",
+            "rejected_trait_in_loser": "single dominant primary button above secondary"
+          }
+        ]
+      }
+    }
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.65,
+    "correct": 13,
+    "total_evaluated": 20
+  },
+  "predictions": [
+    {
+      "pair_id": "35896::gemini_comp_s2w_35896_v3.png||gemini_comp_s2w_35896_v4.png",
+      "cid": "35896::gemini_comp_s2w_35896_v3.png>>gemini_comp_s2w_35896_v4.png::T000245",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 9,
+            "score_b": 7,
+            "reason": "A sections scan clearer",
+            "calculated_weighted_score_a": 315.0,
+            "calculated_weighted_score_b": 245.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 9,
+            "score_b": 3,
+            "reason": "A light; B dark",
+            "calculated_weighted_score_a": 252.0,
+            "calculated_weighted_score_b": 84.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "A balanced, B roomy",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 168.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "B primary action clearer",
+            "calculated_weighted_score_a": 147.0,
+            "calculated_weighted_score_b": 168.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 9,
+            "score_b": 4,
+            "reason": "A restrained, B glowy",
+            "calculated_weighted_score_a": 180.0,
+            "calculated_weighted_score_b": 80.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 9,
+            "score_b": 7,
+            "reason": "A labels more explicit",
+            "calculated_weighted_score_a": 162.0,
+            "calculated_weighted_score_b": 126.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 9,
+            "score_b": 6,
+            "reason": "A calmer, less flashy",
+            "calculated_weighted_score_a": 153.0,
+            "calculated_weighted_score_b": 102.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1401.0,
+        "final_total_score_b": 973.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "38140::gpt_comp_s2w_38140_v2.png||gpt_comp_s2w_38140_v4.png",
+      "cid": "38140::gpt_comp_s2w_38140_v2.png>>gpt_comp_s2w_38140_v4.png::T000256",
+      "true_winner": "B",
+      "final_choice_raw": "A << B",
+      "true_strength": 2,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "Stronger labeled section flow",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 9,
+            "score_b": 8,
+            "reason": "Lighter, subtler accent usage",
+            "calculated_weighted_score_a": 252.0,
+            "calculated_weighted_score_b": 224.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "Denser yet still scannable",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 216.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "More explicit primary actions",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 189.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 9,
+            "score_b": 8,
+            "reason": "Softer outlined card treatment",
+            "calculated_weighted_score_a": 180.0,
+            "calculated_weighted_score_b": 160.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "More descriptive visible labels",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "Cleaner, less fragmented content",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 153.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1328.0,
+        "final_total_score_b": 1419.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "43768::gemini_comp_s2w_43768_v2.png||gemini_comp_s2w_43768_v4.png",
+      "cid": "43768::gemini_comp_s2w_43768_v2.png>>gemini_comp_s2w_43768_v4.png::T000316",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 5,
+            "score_b": 8,
+            "reason": "B has clearer sections",
+            "calculated_weighted_score_a": 175.0,
+            "calculated_weighted_score_b": 280.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 9,
+            "score_b": 3,
+            "reason": "A matches light neutrals",
+            "calculated_weighted_score_a": 252.0,
+            "calculated_weighted_score_b": 84.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "B feels denser organized",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 4,
+            "score_b": 6,
+            "reason": "B actions more explicit",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 126.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "A softer understated components",
+            "calculated_weighted_score_a": 160.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 3,
+            "score_b": 8,
+            "reason": "B labels tabs search",
+            "calculated_weighted_score_a": 54.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 7,
+            "score_b": 6,
+            "reason": "A less visually busy",
+            "calculated_weighted_score_a": 119.0,
+            "calculated_weighted_score_b": 102.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 988.0,
+        "final_total_score_b": 1068.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "68136::gemini_comp_s2w_68136_v1.png||gemini_comp_s2w_68136_v3.png",
+      "cid": "68136::gemini_comp_s2w_68136_v1.png>>gemini_comp_s2w_68136_v3.png::T000499",
+      "true_winner": "B",
+      "final_choice_raw": "A < B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "Clearer sections and labels",
+            "calculated_weighted_score_a": 210.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 2,
+            "score_b": 9,
+            "reason": "Light neutral, restrained accents",
+            "calculated_weighted_score_a": 56.0,
+            "calculated_weighted_score_b": 252.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "Balanced density, less cramped",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 4,
+            "score_b": 9,
+            "reason": "Visible labeled coupon actions",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 189.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 5,
+            "score_b": 9,
+            "reason": "Soft outlined, restrained cards",
+            "calculated_weighted_score_a": 100.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 5,
+            "score_b": 9,
+            "reason": "More explicit readable labels",
+            "calculated_weighted_score_a": 90.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "Cleaner, less visually noisy",
+            "calculated_weighted_score_a": 102.0,
+            "calculated_weighted_score_b": 136.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 786.0,
+        "final_total_score_b": 1426.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "45556::gpt_comp_s2w_45556_v2.png||gpt_comp_s2w_45556_v4.png",
+      "cid": "45556::gpt_comp_s2w_45556_v2.png>>gpt_comp_s2w_45556_v4.png::T000328",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B has clearer sections",
+            "calculated_weighted_score_a": 245.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "B uses subtle purple",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 252.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "B feels balanced, scannable",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B has stronger CTA",
+            "calculated_weighted_score_a": 147.0,
+            "calculated_weighted_score_b": 189.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B has softer cards",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B labels content explicitly",
+            "calculated_weighted_score_a": 126.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 8,
+            "reason": "Both remain fairly focused",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 136.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1106.0,
+        "final_total_score_b": 1426.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "44186::gemini_comp_s2w_44186_v1.png||gemini_comp_s2w_44186_v4.png",
+      "cid": "44186::gemini_comp_s2w_44186_v1.png>>gemini_comp_s2w_44186_v4.png::T000320",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 9,
+            "score_b": 4,
+            "reason": "Structured list versus empty",
+            "calculated_weighted_score_a": 315.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "Light theme, B darker",
+            "calculated_weighted_score_a": 224.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 2,
+            "reason": "A balanced, B wasteful",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 48.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 7,
+            "score_b": 5,
+            "reason": "A clearer selection feedback",
+            "calculated_weighted_score_a": 147.0,
+            "calculated_weighted_score_b": 105.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 8,
+            "score_b": 8,
+            "reason": "Soft sheet styling both",
+            "calculated_weighted_score_a": 160.0,
+            "calculated_weighted_score_b": 160.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 9,
+            "score_b": 6,
+            "reason": "A has explicit labels",
+            "calculated_weighted_score_a": 162.0,
+            "calculated_weighted_score_b": 108.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "Both clean, B sparse",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 119.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1336.0,
+        "final_total_score_b": 820.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "29179::gemini_comp_s2w_29179_v1.png||gemini_comp_s2w_29179_v3.png",
+      "cid": "29179::gemini_comp_s2w_29179_v1.png>>gemini_comp_s2w_29179_v3.png::T000187",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "B has clearer grouping",
+            "calculated_weighted_score_a": 210.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 4,
+            "score_b": 9,
+            "reason": "B uses calm neutrals",
+            "calculated_weighted_score_a": 112.0,
+            "calculated_weighted_score_b": 252.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 5,
+            "score_b": 8,
+            "reason": "B feels balanced, efficient",
+            "calculated_weighted_score_a": 120.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 5,
+            "score_b": 8,
+            "reason": "B shows calmer CTA",
+            "calculated_weighted_score_a": 105.0,
+            "calculated_weighted_score_b": 168.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 3,
+            "score_b": 9,
+            "reason": "B has soft cards",
+            "calculated_weighted_score_a": 60.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "B adds explicit metadata",
+            "calculated_weighted_score_a": 108.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 4,
+            "score_b": 8,
+            "reason": "B reduces visual noise",
+            "calculated_weighted_score_a": 68.0,
+            "calculated_weighted_score_b": 136.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 783.0,
+        "final_total_score_b": 1387.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "50565::gpt_comp_s2w_50565_v2.png||gpt_comp_s2w_50565_v3.png",
+      "cid": "50565::gpt_comp_s2w_50565_v2.png>>gpt_comp_s2w_50565_v3.png::T000357",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "More labeled, structured sections",
+            "calculated_weighted_score_a": 245.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 4,
+            "reason": "Both dark, B calmer",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 112.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 5,
+            "score_b": 8,
+            "reason": "B denser yet organized",
+            "calculated_weighted_score_a": 120.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B clearer action hierarchy",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 189.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "B lighter, subtler cards",
+            "calculated_weighted_score_a": 120.0,
+            "calculated_weighted_score_b": 160.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "B adds helper labels",
+            "calculated_weighted_score_a": 108.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 8,
+            "reason": "Both focused, low decoration",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 136.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 981.0,
+        "final_total_score_b": 1266.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "35896::gemini_comp_s2w_35896_v2.png||gemini_comp_s2w_35896_v3.png",
+      "cid": "35896::gemini_comp_s2w_35896_v2.png>>gemini_comp_s2w_35896_v3.png::T000243",
+      "true_winner": "B",
+      "final_choice_raw": "A << B",
+      "true_strength": 2,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B has clearer sectioning",
+            "calculated_weighted_score_a": 245.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 9,
+            "reason": "B matches light neutrals",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 252.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "B feels denser, organized",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 5,
+            "score_b": 8,
+            "reason": "B labels actions better",
+            "calculated_weighted_score_a": 105.0,
+            "calculated_weighted_score_b": 168.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "B uses softer cards",
+            "calculated_weighted_score_a": 120.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "B has clearer labels",
+            "calculated_weighted_score_a": 108.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B is cleaner, calmer",
+            "calculated_weighted_score_a": 119.0,
+            "calculated_weighted_score_b": 153.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 925.0,
+        "final_total_score_b": 1422.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "42605::gpt_comp_s2w_42605_v1.png||gpt_comp_s2w_42605_v2.png",
+      "cid": "42605::gpt_comp_s2w_42605_v1.png>>gpt_comp_s2w_42605_v2.png::T000294",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "A more clearly grouped",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 245.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 6,
+            "score_b": 3,
+            "reason": "A calmer, less saturated",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 84.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "A balanced, B wasteful",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 120.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 9,
+            "score_b": 4,
+            "reason": "A explicit labeled actions",
+            "calculated_weighted_score_a": 189.0,
+            "calculated_weighted_score_b": 84.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "A softer outlined cards",
+            "calculated_weighted_score_a": 160.0,
+            "calculated_weighted_score_b": 100.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "A more explicit labels",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 108.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 7,
+            "score_b": 3,
+            "reason": "B decorative imagery distracts",
+            "calculated_weighted_score_a": 119.0,
+            "calculated_weighted_score_b": 51.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1252.0,
+        "final_total_score_b": 792.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "17058::gpt_comp_s2w_17058_v2.png||gpt_comp_s2w_17058_v4.png",
+      "cid": "17058::gpt_comp_s2w_17058_v2.png>>gpt_comp_s2w_17058_v4.png::T000070",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "Clear sections; B stronger",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 4,
+            "reason": "Both dark; B calmer",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 112.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "B denser yet organized",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "A primary actions clearer",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 147.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 6,
+            "score_b": 7,
+            "reason": "B softer, more restrained",
+            "calculated_weighted_score_a": 120.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 8,
+            "reason": "Both label content clearly",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 6,
+            "score_b": 7,
+            "reason": "B more focused overall",
+            "calculated_weighted_score_a": 102.0,
+            "calculated_weighted_score_b": 119.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1066.0,
+        "final_total_score_b": 1169.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "27502::gemini_comp_s2w_27502_v2.png||gemini_comp_s2w_27502_v3.png",
+      "cid": "27502::gemini_comp_s2w_27502_v2.png>>gemini_comp_s2w_27502_v3.png::T000159",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 9,
+            "score_b": 5,
+            "reason": "A has clearer grouping",
+            "calculated_weighted_score_a": 315.0,
+            "calculated_weighted_score_b": 175.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 4,
+            "score_b": 7,
+            "reason": "B lighter, calmer palette",
+            "calculated_weighted_score_a": 112.0,
+            "calculated_weighted_score_b": 196.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 3,
+            "reason": "B feels too empty",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 72.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 2,
+            "reason": "A shows labeled actions",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 42.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "B softer, understated cards",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 160.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "A has more labels",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 90.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 7,
+            "score_b": 4,
+            "reason": "B hero image distracts",
+            "calculated_weighted_score_a": 119.0,
+            "calculated_weighted_score_b": 68.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1190.0,
+        "final_total_score_b": 803.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "70410::gemini_comp_s2w_70410_v1.png||gemini_comp_s2w_70410_v2.png",
+      "cid": "70410::gemini_comp_s2w_70410_v1.png>>gemini_comp_s2w_70410_v2.png::DUP_T000510",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "A has clearer sections",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 210.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 5,
+            "reason": "B adds light canvas",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 6,
+            "reason": "A uses space efficiently",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "A shows labeled actions",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 105.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 4,
+            "reason": "A softer, less intrusive",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 80.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "A labels more explicitly",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 90.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 7,
+            "score_b": 4,
+            "reason": "B floating control distracts",
+            "calculated_weighted_score_a": 119.0,
+            "calculated_weighted_score_b": 68.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1103.0,
+        "final_total_score_b": 837.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "8365::gpt_comp_s2w_8365_v1.png||gpt_comp_s2w_8365_v3.png",
+      "cid": "8365::gpt_comp_s2w_8365_v1.png>>gpt_comp_s2w_8365_v3.png::T000559",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 10,
+            "reason": "B more structured, labeled",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 350.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B calmer subtle accents",
+            "calculated_weighted_score_a": 224.0,
+            "calculated_weighted_score_b": 252.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "B denser yet scannable",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 216.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "B clearer selection state",
+            "calculated_weighted_score_a": 147.0,
+            "calculated_weighted_score_b": 168.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B softer restrained cards",
+            "calculated_weighted_score_a": 160.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 7,
+            "score_b": 10,
+            "reason": "B adds helper labels",
+            "calculated_weighted_score_a": 126.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 6,
+            "score_b": 9,
+            "reason": "A imagery adds noise",
+            "calculated_weighted_score_a": 102.0,
+            "calculated_weighted_score_b": 153.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1207.0,
+        "final_total_score_b": 1499.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "22437::gpt_comp_s2w_22437_v1.png||gpt_comp_s2w_22437_v3.png",
+      "cid": "22437::gpt_comp_s2w_22437_v1.png>>gpt_comp_s2w_22437_v3.png::T000109",
+      "true_winner": "B",
+      "final_choice_raw": "A << B",
+      "true_strength": 2,
+      "predicted_choice": "B",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "Clear tabs and grouping",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 4,
+            "score_b": 8,
+            "reason": "Lighter, calmer background",
+            "calculated_weighted_score_a": 112.0,
+            "calculated_weighted_score_b": 224.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "Dense yet still scannable",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "Filters and states clearer",
+            "calculated_weighted_score_a": 147.0,
+            "calculated_weighted_score_b": 168.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 9,
+            "reason": "Softer outlined cards",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 180.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "More explicit text labels",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 6,
+            "score_b": 8,
+            "reason": "Less decorative visual noise",
+            "calculated_weighted_score_a": 102.0,
+            "calculated_weighted_score_b": 136.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1093.0,
+        "final_total_score_b": 1377.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "70484::gpt_comp_s2w_70484_v1.png||gpt_comp_s2w_70484_v4.png",
+      "cid": "70484::gpt_comp_s2w_70484_v1.png>>gpt_comp_s2w_70484_v4.png::T000518",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 9,
+            "score_b": 6,
+            "reason": "clear labeled card sections",
+            "calculated_weighted_score_a": 315.0,
+            "calculated_weighted_score_b": 210.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 4,
+            "score_b": 2,
+            "reason": "dark theme opposes preference",
+            "calculated_weighted_score_a": 112.0,
+            "calculated_weighted_score_b": 56.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "balanced spacing, efficient grouping",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 9,
+            "score_b": 7,
+            "reason": "visible primary actions labeled",
+            "calculated_weighted_score_a": 189.0,
+            "calculated_weighted_score_b": 147.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "soft cards, restrained depth",
+            "calculated_weighted_score_a": 160.0,
+            "calculated_weighted_score_b": 100.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 9,
+            "score_b": 6,
+            "reason": "explicit labels more readable",
+            "calculated_weighted_score_a": 162.0,
+            "calculated_weighted_score_b": 108.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 7,
+            "score_b": 6,
+            "reason": "focused layout, minor overlays",
+            "calculated_weighted_score_a": 119.0,
+            "calculated_weighted_score_b": 102.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1249.0,
+        "final_total_score_b": 867.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "26367::gpt_comp_s2w_26367_v2.png||gpt_comp_s2w_26367_v4.png",
+      "cid": "26367::gpt_comp_s2w_26367_v2.png>>gpt_comp_s2w_26367_v4.png::T000142",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 9,
+            "score_b": 8,
+            "reason": "A shows richer grouping",
+            "calculated_weighted_score_a": 315.0,
+            "calculated_weighted_score_b": 280.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 5,
+            "reason": "B lighter cards, calmer",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "A denser yet organized",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 4,
+            "reason": "A clearer continue action",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 84.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "B softer outlined cards",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 160.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "A more explicit details",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 126.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "B has unnecessary image",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 102.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1179.0,
+        "final_total_score_b": 1036.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "44186::gemini_comp_s2w_44186_v2.png||gemini_comp_s2w_44186_v4.png",
+      "cid": "44186::gemini_comp_s2w_44186_v2.png>>gemini_comp_s2w_44186_v4.png::T000322",
+      "true_winner": "A",
+      "final_choice_raw": "A >> B",
+      "true_strength": 2,
+      "predicted_choice": "A",
+      "is_correct": true,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 9,
+            "score_b": 4,
+            "reason": "Structured list versus sparse",
+            "calculated_weighted_score_a": 315.0,
+            "calculated_weighted_score_b": 140.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 9,
+            "score_b": 7,
+            "reason": "Light neutrals, subtle purple",
+            "calculated_weighted_score_a": 252.0,
+            "calculated_weighted_score_b": 196.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 8,
+            "score_b": 3,
+            "reason": "Efficient list, not empty",
+            "calculated_weighted_score_a": 192.0,
+            "calculated_weighted_score_b": 72.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 5,
+            "reason": "Clear selected state visible",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 105.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 9,
+            "score_b": 8,
+            "reason": "Soft elevation, restrained styling",
+            "calculated_weighted_score_a": 180.0,
+            "calculated_weighted_score_b": 160.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "Visible labels and options",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 108.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "Both clean, B cleaner",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 153.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1387.0,
+        "final_total_score_b": 934.0,
+        "derived_predicted_choice": "A"
+      }
+    },
+    {
+      "pair_id": "43005::gpt_comp_s2w_43005_v1.png||gpt_comp_s2w_43005_v3.png",
+      "cid": "43005::gpt_comp_s2w_43005_v1.png>>gpt_comp_s2w_43005_v3.png::T000301",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B has clearer grouping",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 4,
+            "reason": "Both are dark themes",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 112.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 8,
+            "reason": "B denser yet organized",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 192.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B actions more explicit",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 189.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 6,
+            "reason": "A softer, less flashy",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 120.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B adds helper labels",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 6,
+            "reason": "A feels less busy",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 102.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1120.0,
+        "final_total_score_b": 1192.0,
+        "derived_predicted_choice": "B"
+      }
+    },
+    {
+      "pair_id": "28349::gemini_comp_s2w_28349_v2.png||gemini_comp_s2w_28349_v4.png",
+      "cid": "28349::gemini_comp_s2w_28349_v2.png>>gemini_comp_s2w_28349_v4.png::T000172",
+      "true_winner": "A",
+      "final_choice_raw": "A > B",
+      "true_strength": 1,
+      "predicted_choice": "B",
+      "is_correct": false,
+      "llm_output_valid": true,
+      "details": {
+        "criteria_evaluations": [
+          {
+            "criterion": "information_hierarchy_and_structure",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B groups content better",
+            "calculated_weighted_score_a": 280.0,
+            "calculated_weighted_score_b": 315.0,
+            "applied_weight": 35.0
+          },
+          {
+            "criterion": "color_theme_and_contrast_preference",
+            "score_a": 3,
+            "score_b": 4,
+            "reason": "Both are dark themes",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 112.0,
+            "applied_weight": 28.0
+          },
+          {
+            "criterion": "visual_density_and_spacing_balance",
+            "score_a": 7,
+            "score_b": 6,
+            "reason": "A denser yet scannable",
+            "calculated_weighted_score_a": 168.0,
+            "calculated_weighted_score_b": 144.0,
+            "applied_weight": 24.0
+          },
+          {
+            "criterion": "clear_action_clarity_and_cta_emphasis",
+            "score_a": 4,
+            "score_b": 5,
+            "reason": "Selection clearer in B",
+            "calculated_weighted_score_a": 84.0,
+            "calculated_weighted_score_b": 105.0,
+            "applied_weight": 21.0
+          },
+          {
+            "criterion": "subtle_card_and_component_styling",
+            "score_a": 7,
+            "score_b": 6,
+            "reason": "A lighter, subtler cards",
+            "calculated_weighted_score_a": 140.0,
+            "calculated_weighted_score_b": 120.0,
+            "applied_weight": 20.0
+          },
+          {
+            "criterion": "readability_and_explicit_labeling",
+            "score_a": 8,
+            "score_b": 9,
+            "reason": "B has clearer labels",
+            "calculated_weighted_score_a": 144.0,
+            "calculated_weighted_score_b": 162.0,
+            "applied_weight": 18.0
+          },
+          {
+            "criterion": "minimal_clutter_with_focused_content",
+            "score_a": 8,
+            "score_b": 7,
+            "reason": "A feels less busy",
+            "calculated_weighted_score_a": 136.0,
+            "calculated_weighted_score_b": 119.0,
+            "applied_weight": 17.0
+          }
+        ],
+        "final_total_score_a": 1036.0,
+        "final_total_score_b": 1077.0,
+        "derived_predicted_choice": "B"
+      }
+    }
+  ]
+}
